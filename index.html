@@ -1,10 +1,9 @@
-<!-- Force GitHub Pages rebuild -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe Femme Accessories | Premium Women's Accessories</title>
+    <title>prettythingsKH | Premium Women's Accessories</title>
     <style>
         /* ===== PROFESSIONAL FEMININE THEME ===== */
         :root {
@@ -94,6 +93,7 @@
             position: relative;
             font-size: 22px;
             color: var(--dark);
+            cursor: pointer;
         }
         
         .cart-count {
@@ -301,6 +301,10 @@
             font-weight: 600;
         }
         
+        .sold-out-badge {
+            background: #FF4757;
+        }
+        
         .product-info {
             padding: 20px;
         }
@@ -355,8 +359,13 @@
             gap: 8px;
         }
         
-        .add-to-cart:hover {
+        .add-to-cart:hover:not(:disabled) {
             background: var(--secondary);
+        }
+        
+        .add-to-cart:disabled {
+            background: #ccc;
+            cursor: not-allowed;
         }
         
         .whatsapp-order {
@@ -506,6 +515,197 @@
             background: var(--primary);
         }
         
+        /* ===== NEW: CHECKOUT MODAL ===== */
+        .checkout-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 3000;
+            overflow-y: auto;
+        }
+        
+        .checkout-modal-content {
+            background: white;
+            margin: 50px auto;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .close-checkout {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        /* ===== NEW: FORM STYLES ===== */
+        .form-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+        
+        .form-section h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+            height: 80px;
+            resize: vertical;
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+            background: white;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+        }
+        
+        .checkbox-group label {
+            flex: 1;
+            font-size: 14px;
+        }
+        
+        .payment-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .payment-info p {
+            margin: 5px 0;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary);
+        }
+        
+        .order-summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* ===== NEW: SUCCESS MODAL ===== */
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 4000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .success-modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .success-icon {
+            font-size: 60px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .whatsapp-confirm-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+        }
+        
+        .whatsapp-confirm-btn:hover {
+            background: #1da851;
+        }
+        
         /* ===== FOOTER ===== */
         footer {
             background: var(--dark);
@@ -577,6 +777,29 @@
             font-size: 14px;
         }
         
+        /* ===== LOADING STATES ===== */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--primary);
+            font-size: 18px;
+        }
+        
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
         /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
             .nav-links {
@@ -623,6 +846,11 @@
                 padding: 8px 20px;
                 font-size: 14px;
             }
+            
+            .checkout-modal-content {
+                margin: 20px auto;
+                padding: 20px;
+            }
         }
         
         /* ===== UTILITIES ===== */
@@ -649,13 +877,6 @@
             transform: scale(1.1);
         }
         
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: var(--primary);
-            font-size: 18px;
-        }
-        
         .empty-state {
             text-align: center;
             padding: 60px 20px;
@@ -672,7 +893,7 @@
 </head>
 <body>
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/234XXXXXXXXXX?text=Hello! I'm interested in your products" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/message/XO7UHEEMVX3TJ1" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -684,7 +905,7 @@
         <nav class="navbar">
             <a href="#" class="logo">
                 <i class="fas fa-crown"></i>
-                <span>Luxe</span>Femme
+                <span>pretty</span>thingsKH
             </a>
             
             <div class="nav-links" id="navLinks">
@@ -717,7 +938,10 @@
     <section class="categories" id="categories">
         <h2 class="section-title">Shop By Category</h2>
         <div class="category-grid" id="categoriesContainer">
-            <!-- Categories will be loaded here -->
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading categories...</p>
+            </div>
         </div>
     </section>
 
@@ -725,19 +949,18 @@
     <section class="products" id="shop">
         <h2 class="section-title">Featured Products</h2>
         
-        <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
-            <button class="filter-btn" onclick="filterProducts('bags')">Bags</button>
-            <button class="filter-btn" onclick="filterProducts('iphone-cases')">iPhone Cases</button>
-            <button class="filter-btn" onclick="filterProducts('samsung-cases')">Samsung Cases</button>
-            <button class="filter-btn" onclick="filterProducts('camera-lens')">Camera Lens</button>
-            <button class="filter-btn" onclick="filterProducts('glasses')">Fashion Glasses</button>
-            <button class="filter-btn" onclick="filterProducts('necklaces')">Necklaces</button>
-            <button class="filter-btn" onclick="filterProducts('earrings')">Earrings</button>
+        <div class="filter-buttons" id="filterButtons">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading filters...</p>
+            </div>
         </div>
         
         <div class="products-grid" id="productsContainer">
-            <!-- Products will be loaded here -->
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading products...</p>
+            </div>
         </div>
     </section>
 
@@ -749,7 +972,6 @@
         </div>
         
         <div class="cart-items" id="cartItems">
-            <!-- Cart items will be loaded here -->
             <div class="empty-state">
                 <i class="fas fa-shopping-bag"></i>
                 <p>Your bag is empty</p>
@@ -762,23 +984,99 @@
             <span id="cartTotal">₦0</span>
         </div>
         
-        <button class="checkout-btn" onclick="checkout()">
+        <button class="checkout-btn" onclick="proceedToCheckout()">
             <i class="fas fa-lock"></i>
             Proceed to Checkout
         </button>
+    </div>
+
+    <!-- Checkout Form Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-modal-content">
+            <button class="close-checkout" onclick="closeCheckout()">×</button>
+            <h2>Complete Your Order</h2>
+            
+            <form id="orderForm">
+                <!-- Customer Information -->
+                <div class="form-section">
+                    <h3>Customer Information</h3>
+                    <input type="text" id="customerName" class="form-input" placeholder="Full Name" required>
+                    <input type="tel" id="phoneNumber" class="form-input" placeholder="Phone Number (required)" required>
+                    <input type="email" id="email" class="form-input" placeholder="Email (optional)">
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="form-section">
+                    <h3>Order Summary</h3>
+                    <div id="checkoutOrderSummary"></div>
+                    <p><strong>Total: <span id="checkoutTotal">₦0</span></strong></p>
+                </div>
+                
+                <!-- Delivery Information -->
+                <div class="form-section">
+                    <h3>Delivery Information</h3>
+                    <textarea id="deliveryAddress" class="form-textarea" placeholder="Delivery Address" required></textarea>
+                    <input type="text" id="city" class="form-input" placeholder="City" required>
+                    <input type="text" id="state" class="form-input" placeholder="State" required>
+                    
+                    <select id="deliveryType" class="form-select" required>
+                        <option value="">Select Delivery Type</option>
+                        <option value="Nationwide">Nationwide</option>
+                        <option value="Interstate">Interstate</option>
+                    </select>
+                </div>
+                
+                <!-- Payment Details -->
+                <div class="form-section">
+                    <h3>Payment Details</h3>
+                    <div class="payment-info">
+                        <p><strong>PalmPay Details:</strong></p>
+                        <p>Account Number: <strong>7040596806</strong></p>
+                        <p>Account Name: <strong>Ummalkhairi Labaran</strong></p>
+                        <p><em>Complete payment before submitting order</em></p>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="paymentConfirmed" required>
+                        <label for="paymentConfirmed">I have completed payment via PalmPay to the account above</label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>🎉 Order Submitted Successfully!</h2>
+            <p>Thank you for your order!</p>
+            <p>We'll process your order once payment is verified.</p>
+            <p><strong>Order ID: <span id="orderIdDisplay">PTKH-123456</span></strong></p>
+            <button id="whatsappBtn" class="whatsapp-confirm-btn">
+                <i class="fab fa-whatsapp"></i>
+                Open WhatsApp to Confirm Payment
+            </button>
+            <p style="margin-top: 15px; font-size: 14px; color: #666;">
+                <em>You can also contact us directly: 0708488790</em>
+            </p>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-column">
-                <h3>Luxe Femme</h3>
+                <h3>prettythingsKH</h3>
                 <p>Premium accessories for the sophisticated woman. Quality, style, and elegance in every piece.</p>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="https://www.instagram.com/prettythingskh?igsh=MXZuNml4YWszY251eg%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@prettythingskh?_r=1&_t=ZM-932zFCSYj7s" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/message/XO7UHEEMVX3TJ1" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             
@@ -796,167 +1094,301 @@
             <div class="footer-column">
                 <h3>Customer Service</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Shipping Policy</a></li>
-                    <li><a href="#">Returns & Exchanges</a></li>
-                    <li><a href="#">Size Guide</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#" onclick="showShippingInfo()">Shipping Policy</a></li>
+                    <li><a href="#" onclick="showReturnsInfo()">Returns & Exchanges</a></li>
+                    <li><a href="#" onclick="showSizeGuide()">Size Guide</a></li>
+                    <li><a href="#" onclick="showFAQs()">FAQs</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h3>Contact Us</h3>
-                <p><i class="fas fa-phone"></i> +234 812 345 6789</p>
-                <p><i class="fas fa-envelope"></i> hello@luxefemme.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
-                <p>Mon-Sat: 9AM - 6PM</p>
+                <p><i class="fas fa-phone"></i> 0708488790</p>
+                <p><i class="fas fa-envelope"></i> ummalkhairlabaran@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Open 24/7</p>
+                <p><i class="fas fa-truck"></i> Nationwide Delivery</p>
             </div>
         </div>
         
         <div class="copyright">
-            <p>&copy; 2024 Luxe Femme Accessories. All rights reserved.</p>
+            <p>&copy; 2024 prettythingsKH. All rights reserved.</p>
             <p>Premium Women's Accessories Store</p>
         </div>
     </footer>
 
     <script>
+        // ========== CONFIGURATION ==========
+        const PRODUCTS_SHEET_URL = 'YOUR-PRODUCTS-GOOGLE-SHEET-URL';
+        const ORDERS_SHEET_URL = 'YOUR-ORDERS-GOOGLE-SHEET-URL';
+        
         // ========== APP STATE ==========
-        let cart = JSON.parse(localStorage.getItem('luxefemme_cart')) || [];
+        let cart = JSON.parse(localStorage.getItem('prettythingskh_cart')) || [];
         let products = [];
-        let categories = [];
+        let categories = new Set();
+        let currentOrderId = '';
         
         // ========== INITIALIZATION ==========
         document.addEventListener('DOMContentLoaded', function() {
             initializeApp();
         });
         
-        function initializeApp() {
-            loadProducts();
-            loadCategories();
+        async function initializeApp() {
             updateCartCount();
             
-            // Set WhatsApp number
-            const whatsappBtn = document.querySelector('.whatsapp-float');
-            whatsappBtn.href = `https://wa.me/2348123456789?text=Hello%20Luxe%20Femme!%20I'm%20interested%20in%20your%20products`;
+            // Setup form submission
+            document.getElementById('orderForm').addEventListener('submit', handleOrderSubmission);
+            
+            // Setup WhatsApp button
+            document.getElementById('whatsappBtn').addEventListener('click', openWhatsAppConfirmation);
+            
+            // Load products from Google Sheets
+            await loadProductsFromGoogleSheets();
         }
         
-        // ========== PRODUCTS DATABASE ==========
-        // In REAL usage, this would come from Google Sheets API
-        // For now, using hardcoded data with placeholders
+        // ========== GOOGLE SHEETS PRODUCTS INTEGRATION ==========
+        async function loadProductsFromGoogleSheets() {
+            try {
+                // In production, replace with actual Google Sheets API call
+                // For now, using simulated data that SHE WILL REPLACE with real Google Sheets integration
+                
+                // Simulating API call delay
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // THIS IS WHERE SHE CONNECTS GOOGLE SHEETS
+                // She will replace this with actual fetch to her Google Sheets API
+                products = await fetchProductsData();
+                
+                // Extract categories from products
+                extractCategories();
+                
+                // Display everything
+                displayCategories();
+                displayFilterButtons();
+                displayProducts(products);
+                
+            } catch (error) {
+                console.error('Error loading products:', error);
+                showError('Failed to load products. Please refresh the page.');
+                
+                // Fallback to sample data
+                loadSampleProducts();
+            }
+        }
         
-        function loadProducts() {
-            // This is SAMPLE DATA - She will replace with her actual products
-            products = [
+        // ========== SAMPLE DATA (SHE WILL REPLACE WITH GOOGLE SHEETS) ==========
+        async function fetchProductsData() {
+            // SHE WILL REPLACE THIS WITH ACTUAL GOOGLE SHEETS API CALL
+            // Example: const response = await fetch(PRODUCTS_SHEET_URL);
+            // const data = await response.json();
+            // return data.products;
+            
+            // Sample data structure matching Google Sheets
+            return [
                 {
                     id: 1,
-                    name: "Designer Tote Bag",
-                    price: "₦18,500",
-                    category: "bags",
-                    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop",
-                    colors: ["#FFB6C1", "#B76E79", "#2C2C2C"],
-                    description: "Premium leather tote bag with gold hardware"
+                    name: "Rhode lip gloss",
+                    price: 8500,
+                    category: "beauty",
+                    image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&auto=format&fit=crop",
+                    colors: "#FFB6C1,#B76E79,#FFFFFF",
+                    description: "Premium Rhode lip gloss collection",
+                    status: "available",
+                    stock: 10
                 },
                 {
                     id: 2,
-                    name: "Rose Gold iPhone Case",
-                    price: "₦4,500",
+                    name: "Rhode case",
+                    price: 7500,
                     category: "iphone-cases",
-                    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w-800&auto=format&fit=crop",
-                    colors: ["#B76E79", "#FFB6C1", "#D4AF37"],
-                    description: "Floral design silicone case with rose gold accents"
+                    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&auto=format&fit=crop",
+                    colors: "#B76E79,#FFB6C1,#D4AF37",
+                    description: "Official Rhode phone case",
+                    status: "available",
+                    stock: 5
                 },
                 {
                     id: 3,
-                    name: "Fashion Sunglasses",
-                    price: "₦7,500",
-                    category: "glasses",
-                    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&auto=format&fit=crop",
-                    colors: ["#2C2C2C", "#D4AF37", "#FFFFFF"],
-                    description: "UV protection cat eye sunglasses"
+                    name: "Rhode lip case",
+                    price: 6500,
+                    category: "beauty",
+                    image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&auto=format&fit=crop",
+                    colors: "#FFFFFF,#FFB6C1",
+                    description: "Lip case with Rhode branding",
+                    status: "available",
+                    stock: 8
                 },
                 {
                     id: 4,
-                    name: "Pearl Necklace",
-                    price: "₦12,000",
-                    category: "necklaces",
-                    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&auto=format&fit=crop",
-                    colors: ["#FFFFFF", "#D4AF37"],
-                    description: "Elegant freshwater pearl necklace"
+                    name: "Fashion Glasses",
+                    price: 12500,
+                    category: "glasses",
+                    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&auto=format&fit=crop",
+                    colors: "#2C2C2C,#D4AF37,#FFFFFF",
+                    description: "UV protection fashion glasses",
+                    status: "available",
+                    stock: 3
                 },
                 {
                     id: 5,
-                    name: "Gold Hoop Earrings",
-                    price: "₦6,500",
-                    category: "earrings",
-                    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&auto=format&fit=crop",
-                    colors: ["#D4AF37", "#FFFFFF"],
-                    description: "14k gold plated hoop earrings"
+                    name: "Designer Fashion Bag",
+                    price: 18500,
+                    category: "bags",
+                    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop",
+                    colors: "#B76E79,#2C2C2C,#D4AF37",
+                    description: "Premium leather fashion bag",
+                    status: "available",
+                    stock: 2
                 },
                 {
                     id: 6,
-                    name: "Samsung Clear Case",
-                    price: "₦3,800",
-                    category: "samsung-cases",
-                    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&auto=format&fit=crop",
-                    colors: ["#FFFFFF", "#FFB6C1", "#2C2C2C"],
-                    description: "Crystal clear case with glitter accents"
+                    name: "Van Cleef necklace set",
+                    price: 22000,
+                    category: "necklaces",
+                    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&auto=format&fit=crop",
+                    colors: "#FFFFFF,#D4AF37",
+                    description: "Luxury Van Cleef inspired necklace set",
+                    status: "available",
+                    stock: 4
                 },
                 {
                     id: 7,
-                    name: "Camera Lens Kit",
-                    price: "₦5,500",
-                    category: "camera-lens",
-                    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&auto=format&fit=crop",
-                    colors: ["#2C2C2C"],
-                    description: "Professional lens accessories set"
+                    name: "Fashion necklace set",
+                    price: 15000,
+                    category: "necklaces",
+                    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&auto=format&fit=crop",
+                    colors: "#D4AF37,#B76E79",
+                    description: "Elegant fashion necklace collection",
+                    status: "sold-out",
+                    stock: 0
                 },
                 {
                     id: 8,
-                    name: "Evening Clutch Bag",
-                    price: "₦9,500",
-                    category: "bags",
-                    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop",
-                    colors: ["#B76E79", "#D4AF37", "#2C2C2C"],
-                    description: "Sparkling evening clutch for special occasions"
+                    name: "Flower earrings",
+                    price: 8500,
+                    category: "earrings",
+                    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&auto=format&fit=crop",
+                    colors: "#FFB6C1,#D4AF37,#FFFFFF",
+                    description: "Delicate flower design earrings",
+                    status: "available",
+                    stock: 7
+                },
+                {
+                    id: 9,
+                    name: "Beauty accessories set",
+                    price: 9500,
+                    category: "beauty",
+                    image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&auto=format&fit=crop",
+                    colors: "#FFB6C1,#FFFFFF,#B76E79",
+                    description: "Complete beauty accessories collection",
+                    status: "available",
+                    stock: 6
+                },
+                {
+                    id: 10,
+                    name: "iPhone case collection",
+                    price: 6500,
+                    category: "iphone-cases",
+                    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&auto=format&fit=crop",
+                    colors: "#2C2C2C,#FFFFFF,#FFB6C1",
+                    description: "Various iPhone case designs",
+                    status: "available",
+                    stock: 9
                 }
             ];
-            
+        }
+        
+        function loadSampleProducts() {
+            // Fallback if Google Sheets fails
+            products = [
+                {
+                    id: 1,
+                    name: "Rhode lip gloss",
+                    price: 8500,
+                    category: "beauty",
+                    image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&auto=format&fit=crop",
+                    colors: ["#FFB6C1", "#B76E79", "#FFFFFF"],
+                    description: "Premium Rhode lip gloss collection",
+                    status: "available"
+                }
+                // ... other sample products
+            ];
+            extractCategories();
+            displayCategories();
+            displayFilterButtons();
             displayProducts(products);
         }
         
-        function loadCategories() {
-            categories = [
-                { id: "bags", name: "Designer Bags", icon: "fas fa-handbag", count: 2 },
-                { id: "iphone-cases", name: "iPhone Cases", icon: "fas fa-mobile-alt", count: 1 },
-                { id: "samsung-cases", name: "Samsung Cases", icon: "fas fa-mobile", count: 1 },
-                { id: "camera-lens", name: "Camera Lens", icon: "fas fa-camera", count: 1 },
-                { id: "glasses", name: "Fashion Glasses", icon: "fas fa-glasses", count: 1 },
-                { id: "necklaces", name: "Necklaces", icon: "fas fa-gem", count: 1 },
-                { id: "earrings", name: "Earrings", icon: "fas fa-star", count: 1 }
-            ];
-            
-            displayCategories(categories);
+        function extractCategories() {
+            categories.clear();
+            products.forEach(product => {
+                if (product.category) {
+                    categories.add(product.category);
+                }
+            });
         }
         
         // ========== DISPLAY FUNCTIONS ==========
-        function displayCategories(catArray) {
+        function displayCategories() {
             const container = document.getElementById('categoriesContainer');
-            container.innerHTML = '';
+            const categoryNames = {
+                'bags': 'Designer Bags',
+                'iphone-cases': 'iPhone Cases',
+                'glasses': 'Fashion Glasses',
+                'necklaces': 'Necklaces',
+                'earrings': 'Earrings',
+                'beauty': 'Beauty Accessories'
+            };
             
-            catArray.forEach(category => {
-                const categoryCard = `
-                    <a href="#shop" class="category-card" onclick="filterProducts('${category.id}')">
+            const icons = {
+                'bags': 'fas fa-handbag',
+                'iphone-cases': 'fas fa-mobile-alt',
+                'glasses': 'fas fa-glasses',
+                'necklaces': 'fas fa-gem',
+                'earrings': 'fas fa-star',
+                'beauty': 'fas fa-heart'
+            };
+            
+            let categoriesHTML = '';
+            categories.forEach(category => {
+                const count = products.filter(p => p.category === category).length;
+                const name = categoryNames[category] || category;
+                const icon = icons[category] || 'fas fa-star';
+                
+                categoriesHTML += `
+                    <a href="#shop" class="category-card" onclick="filterProducts('${category}')">
                         <div class="category-img">
-                            <i class="${category.icon}"></i>
+                            <i class="${icon}"></i>
                         </div>
                         <div class="category-info">
-                            <h3>${category.name}</h3>
-                            <p>${category.count} ${category.count === 1 ? 'product' : 'products'}</p>
+                            <h3>${name}</h3>
+                            <p>${count} ${count === 1 ? 'product' : 'products'}</p>
                         </div>
                     </a>
                 `;
-                container.innerHTML += categoryCard;
             });
+            
+            container.innerHTML = categoriesHTML;
+        }
+        
+        function displayFilterButtons() {
+            const container = document.getElementById('filterButtons');
+            const categoryNames = {
+                'bags': 'Bags',
+                'iphone-cases': 'iPhone Cases',
+                'glasses': 'Fashion Glasses',
+                'necklaces': 'Necklaces',
+                'earrings': 'Earrings',
+                'beauty': 'Beauty Accessories'
+            };
+            
+            let buttonsHTML = '<button class="filter-btn active" onclick="filterProducts(\'all\')">All Products</button>';
+            
+            categories.forEach(category => {
+                const name = categoryNames[category] || category;
+                buttonsHTML += `<button class="filter-btn" onclick="filterProducts('${category}')">${name}</button>`;
+            });
+            
+            container.innerHTML = buttonsHTML;
         }
         
         function displayProducts(prodArray) {
@@ -976,32 +1408,45 @@
             container.innerHTML = '';
             
             prodArray.forEach(product => {
-                const colorsHTML = product.colors.map(color => 
-                    `<div class="color-dot" style="background-color: ${color};"></div>`
+                const colors = product.colors ? 
+                    (typeof product.colors === 'string' ? product.colors.split(',') : product.colors) : 
+                    [];
+                
+                const colorsHTML = colors.map(color => 
+                    `<div class="color-dot" style="background-color: ${color.trim()};"></div>`
                 ).join('');
+                
+                const isSoldOut = product.status === 'sold-out' || (product.stock !== undefined && product.stock <= 0);
                 
                 const productCard = `
                     <div class="product-card">
                         <div class="product-img">
                             <img src="${product.image}" alt="${product.name}" loading="lazy">
-                            <div class="product-badge">New</div>
+                            ${isSoldOut ? 
+                                '<div class="product-badge sold-out-badge">Sold Out</div>' : 
+                                '<div class="product-badge">New</div>'
+                            }
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">${product.name}</h3>
-                            <div class="product-price">${product.price}</div>
-                            <div class="product-colors">
-                                ${colorsHTML}
-                            </div>
+                            <div class="product-price">₦${product.price.toLocaleString()}</div>
+                            ${colorsHTML ? `
+                                <div class="product-colors">
+                                    ${colorsHTML}
+                                </div>
+                            ` : ''}
                             <p style="color: #666; font-size: 14px; margin-bottom: 15px;">${product.description}</p>
                             <div class="product-actions">
-                                <button class="add-to-cart" onclick="addToCart(${product.id})">
+                                <button class="add-to-cart" 
+                                    onclick="addToCart(${product.id})"
+                                    ${isSoldOut ? 'disabled' : ''}>
                                     <i class="fas fa-shopping-bag"></i>
-                                    Add to Bag
+                                    ${isSoldOut ? 'Sold Out' : 'Add to Bag'}
                                 </button>
-                                <a href="https://wa.me/2348123456789?text=I'm%20interested%20in%20${encodeURIComponent(product.name)}%20${encodeURIComponent(product.price)}" 
+                                <a href="https://wa.me/message/XO7UHEEMVX3TJ1?text=I'm%20interested%20in%20${encodeURIComponent(product.name)}%20₦${product.price.toLocaleString()}" 
                                    class="whatsapp-order" target="_blank">
                                     <i class="fab fa-whatsapp"></i>
-                                    Order
+                                    Inquire
                                 </a>
                             </div>
                         </div>
@@ -1032,9 +1477,20 @@
             const product = products.find(p => p.id === productId);
             if (!product) return;
             
+            // Check if sold out
+            if (product.status === 'sold-out' || (product.stock !== undefined && product.stock <= 0)) {
+                showNotification('This product is sold out!');
+                return;
+            }
+            
             const existingItem = cart.find(item => item.id === productId);
             
             if (existingItem) {
+                // Check stock limit
+                if (product.stock && existingItem.quantity >= product.stock) {
+                    showNotification(`Only ${product.stock} available in stock!`);
+                    return;
+                }
                 existingItem.quantity += 1;
             } else {
                 cart.push({
@@ -1067,19 +1523,48 @@
             const item = cart.find(item => item.id === productId);
             if (!item) return;
             
+            const product = products.find(p => p.id === productId);
+            
             item.quantity += change;
+            
+            // Check stock limit
+            if (product && product.stock && item.quantity > product.stock) {
+                item.quantity = product.stock;
+                showNotification(`Only ${product.stock} available in stock!`);
+            }
             
             if (item.quantity < 1) {
                 removeFromCart(productId);
             } else {
                 saveCart();
-                displayCartItems();
                 updateCartCount();
+                updateCartItemDisplay(productId, item.quantity);
             }
         }
         
+        function updateCartItemDisplay(productId, quantity) {
+            const cartItems = document.getElementById('cartItems');
+            const itemElement = cartItems.querySelector(`[data-product-id="${productId}"]`);
+            
+            if (itemElement) {
+                const quantitySpan = itemElement.querySelector('.cart-item-quantity');
+                if (quantitySpan) {
+                    quantitySpan.textContent = quantity;
+                }
+                
+                const priceElement = itemElement.querySelector('.cart-item-price');
+                if (priceElement) {
+                    const priceNum = parseInt(priceElement.dataset.price) || 0;
+                    const itemTotal = priceNum * quantity;
+                    priceElement.textContent = `₦${itemTotal.toLocaleString()}`;
+                }
+            }
+            
+            updateCartTotal();
+        }
+        
         function saveCart() {
-            localStorage.setItem('luxefemme_cart', JSON.stringify(cart));
+            localStorage.setItem('prettythingskh_cart', JSON.stringify(cart));
         }
         
         function updateCartCount() {
@@ -1107,22 +1592,20 @@
             let itemsHTML = '';
             
             cart.forEach(item => {
-                // Extract numeric price (remove ₦ and commas)
-                const priceNum = parseInt(item.price.replace(/[₦,]/g, '')) || 0;
-                const itemTotal = priceNum * item.quantity;
+                const itemTotal = item.price * item.quantity;
                 total += itemTotal;
                 
                 itemsHTML += `
-                    <div class="cart-item">
+                    <div class="cart-item" data-product-id="${item.id}">
                         <div class="cart-item-img">
                             <img src="${item.image}" alt="${item.name}">
                         </div>
                         <div class="cart-item-info">
                             <div class="cart-item-title">${item.name}</div>
-                            <div class="cart-item-price">${item.price}</div>
+                            <div class="cart-item-price" data-price="${item.price}">₦${itemTotal.toLocaleString()}</div>
                             <div class="cart-quantity">
                                 <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
-                                <span>${item.quantity}</span>
+                                <span class="cart-item-quantity">${item.quantity}</span>
                                 <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
                                 <button class="remove-item" onclick="removeFromCart(${item.id})">
                                     <i class="fas fa-trash"></i>
@@ -1134,49 +1617,195 @@
             });
             
             container.innerHTML = itemsHTML;
+            updateCartTotal();
+        }
+        
+        function updateCartTotal() {
+            const totalElement = document.getElementById('cartTotal');
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             totalElement.textContent = `₦${total.toLocaleString()}`;
         }
         
         // ========== CART MODAL ==========
         function toggleCart() {
             const modal = document.getElementById('cartModal');
+            const currentDisplay = modal.style.display;
+            
+            modal.style.display = currentDisplay === 'block' ? 'none' : 'block';
+            
             if (modal.style.display === 'block') {
-                modal.style.display = 'none';
-            } else {
-                modal.style.display = 'block';
                 displayCartItems();
             }
         }
         
-        // ========== CHECKOUT ==========
-        function checkout() {
+        // ========== CHECKOUT PROCESS ==========
+        function proceedToCheckout() {
             if (cart.length === 0) {
                 alert('Your bag is empty! Add some items first.');
                 return;
             }
             
-            // Build order summary
-            let orderSummary = "Order Details:%0A%0A";
+            // Generate order summary for checkout form
+            let summaryHTML = '';
             let total = 0;
             
             cart.forEach(item => {
-                const priceNum = parseInt(item.price.replace(/[₦,]/g, '')) || 0;
-                const itemTotal = priceNum * item.quantity;
+                const itemTotal = item.price * item.quantity;
                 total += itemTotal;
                 
-                orderSummary += `• ${item.name} x${item.quantity} - ${item.price}%0A`;
+                summaryHTML += `
+                    <div class="order-summary-item">
+                        <span>${item.name} x${item.quantity}</span>
+                        <span>₦${itemTotal.toLocaleString()}</span>
+                    </div>
+                `;
             });
             
-            orderSummary += `%0ATotal: ₦${total.toLocaleString()}%0A%0A`;
-            orderSummary += "Shipping Information:%0A";
-            orderSummary += "Name: ________%0A";
-            orderSummary += "Phone: ________%0A";
-            orderSummary += "Address: ________%0A%0A";
-            orderSummary += "Please send your details to confirm order!";
+            document.getElementById('checkoutOrderSummary').innerHTML = summaryHTML;
+            document.getElementById('checkoutTotal').textContent = `₦${total.toLocaleString()}`;
             
-            // Open WhatsApp with order summary
-            const whatsappUrl = `https://wa.me/2348123456789?text=${orderSummary}`;
-            window.open(whatsappUrl, '_blank');
+            // Close cart modal and open checkout modal
+            document.getElementById('cartModal').style.display = 'none';
+            document.getElementById('checkoutModal').style.display = 'block';
+        }
+        
+        function closeCheckout() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+        
+        // ========== ORDER SUBMISSION ==========
+        async function handleOrderSubmission(event) {
+            event.preventDefault();
+            
+            // Validate form
+            const form = event.target;
+            if (!form.checkValidity()) {
+                alert('Please fill in all required fields and confirm payment.');
+                return;
+            }
+            
+            // Collect form data
+            const orderData = {
+                customerName: document.getElementById('customerName').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                email: document.getElementById('email').value || '',
+                deliveryAddress: document.getElementById('deliveryAddress').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                deliveryType: document.getElementById('deliveryType').value,
+                products: cart.map(item => item.name).join(', '),
+                quantities: cart.map(item => item.quantity).join(', '),
+                totalAmount: cart.reduce((total, item) => total + (item.price * item.quantity), 0),
+                paymentConfirmed: document.getElementById('paymentConfirmed').checked ? 'Yes' : 'No'
+            };
+            
+            // Generate order ID
+            currentOrderId = 'PTKH-' + Date.now();
+            
+            try {
+                // Show loading state
+                const submitBtn = form.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                submitBtn.disabled = true;
+                
+                // Send to Google Sheets (ORDERS SHEET)
+                const response = await submitToGoogleSheets(orderData);
+                
+                // Close checkout modal and show success
+                closeCheckout();
+                showSuccessModal(orderData);
+                
+                // Reset form
+                form.reset();
+                
+            } catch (error) {
+                alert('Error submitting order. Please try again or contact us directly via WhatsApp.');
+                console.error('Submission error:', error);
+            } finally {
+                // Reset button
+                const submitBtn = form.querySelector('.submit-btn');
+                submitBtn.textContent = 'Submit Order';
+                submitBtn.disabled = false;
+            }
+        }
+        
+        async function submitToGoogleSheets(orderData) {
+            // Add order ID and timestamp
+            const fullData = {
+                ...orderData,
+                orderId: currentOrderId,
+                timestamp: new Date().toLocaleString()
+            };
+            
+            // Send to Google Sheets ORDERS sheet
+            const response = await fetch(ORDERS_SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(fullData)
+            });
+            
+            return { success: true };
+        }
+        
+        function showSuccessModal(orderData) {
+            // Display order ID
+            document.getElementById('orderIdDisplay').textContent = currentOrderId;
+            
+            // Store order data for WhatsApp message
+            window.lastOrderData = orderData;
+            window.lastOrderId = currentOrderId;
+            
+            // Show success modal
+            document.getElementById('successModal').style.display = 'flex';
+            
+            // Clear cart
+            cart = [];
+            saveCart();
+            updateCartCount();
+            
+            // Update cart display if open
+            if (document.getElementById('cartModal').style.display === 'block') {
+                displayCartItems();
+            }
+        }
+        
+        function openWhatsAppConfirmation() {
+            if (!window.lastOrderData) return;
+            
+            const order = window.lastOrderData;
+            const orderId = window.lastOrderId;
+            
+            // Build WhatsApp message
+            let message = `Hello prettythingsKH 👋%0A%0AI've completed payment.%0A%0A`;
+            message += `Order ID: ${orderId}%0A`;
+            message += `Order Details:%0A`;
+            
+            // Add products
+            const products = order.products.split(', ');
+            const quantities = order.quantities.split(', ');
+            
+            products.forEach((product, index) => {
+                message += `• ${product} x${quantities[index]}%0A`;
+            });
+            
+            message += `%0ATotal: ₦${parseInt(order.totalAmount).toLocaleString()}%0A%0A`;
+            message += `Delivery Address:%0A`;
+            message += `${order.deliveryAddress}%0A`;
+            message += `${order.city}, ${order.state}%0A`;
+            message += `Delivery Type: ${order.deliveryType}%0A%0A`;
+            message += `Thank you 💖`;
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/234708488790?text=${message}`, '_blank');
+            
+            // Close success modal after a delay
+            setTimeout(() => {
+                document.getElementById('successModal').style.display = 'none';
+            }, 1000);
         }
         
         // ========== MOBILE MENU ==========
@@ -1187,7 +1816,6 @@
         
         // ========== NOTIFICATIONS ==========
         function showNotification(message) {
-            // Create notification element
             const notification = document.createElement('div');
             notification.style.cssText = `
                 position: fixed;
@@ -1205,7 +1833,6 @@
             notification.textContent = message;
             document.body.appendChild(notification);
             
-            // Remove after 3 seconds
             setTimeout(() => {
                 notification.style.animation = 'slideOut 0.3s ease';
                 setTimeout(() => {
@@ -1214,6 +1841,50 @@
             }, 3000);
         }
         
+        function showError(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: #FF4757;
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 3000;
+                animation: slideIn 0.3s ease;
+                font-weight: 500;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
+        // ========== FOOTER INFO FUNCTIONS ==========
+        function showShippingInfo() {
+            alert('Shipping Information:\n\n• Free shipping on orders over ₦10,000\n• Delivery within 3-7 business days\n• Nationwide delivery available\n• Tracking number provided for all orders');
+        }
+        
+        function showReturnsInfo() {
+            alert('Returns & Exchanges:\n\n• 7-day return policy\n• Items must be unused and in original packaging\n• Contact us via WhatsApp to initiate return\n• Refunds processed within 3-5 business days');
+        }
+        
+        function showSizeGuide() {
+            alert('Size Guide:\n\n• One size fits all for most accessories\n• Bags: Standard size fits A4 documents\n• iPhone Cases: Available for all models\n• Contact us for specific measurements');
+        }
+        
+        function showFAQs() {
+            alert('Frequently Asked Questions:\n\nQ: How do I track my order?\nA: We provide tracking numbers via WhatsApp.\n\nQ: What payment methods do you accept?\nA: PalmPay transfers only.\n\nQ: Can I modify my order after placing it?\nA: Contact us immediately via WhatsApp.\n\nQ: Do you offer international shipping?\nA: Currently, we only ship within Nigeria.');
+        }
+        
+        // ========== INITIAL LOAD ==========
         // Add CSS for animations
         const style = document.createElement('style');
         style.textContent = `
@@ -1228,8 +1899,7 @@
         `;
         document.head.appendChild(style);
         
-        // ========== INITIAL LOAD ==========
-        // Close cart when clicking outside
+        // Close modals when clicking outside
         document.addEventListener('click', function(event) {
             const cartModal = document.getElementById('cartModal');
             const cartIcon = document.querySelector('.cart-icon');
@@ -1238,6 +1908,18 @@
                 !cartModal.contains(event.target) && 
                 !cartIcon.contains(event.target)) {
                 cartModal.style.display = 'none';
+            }
+            
+            const checkoutModal = document.getElementById('checkoutModal');
+            if (checkoutModal.style.display === 'block' && 
+                !checkoutModal.contains(event.target)) {
+                closeCheckout();
+            }
+            
+            const successModal = document.getElementById('successModal');
+            if (successModal.style.display === 'flex' && 
+                !successModal.contains(event.target)) {
+                successModal.style.display = 'none';
             }
         });
         
