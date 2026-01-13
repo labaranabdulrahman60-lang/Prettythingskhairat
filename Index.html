@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Femme Accessories | Premium Women's Accessories</title>
+    <style>
+        /* ===== PROFESSIONAL FEMININE THEME ===== */
+        :root {
+            --primary: #FFB6C1;    /* Soft Pink */
+            --secondary: #B76E79;  /* Rose Gold */
+            --accent: #D4AF37;     /* Gold */
+            --dark: #2C2C2C;       /* Dark Gray */
+            --light: #FFFFFF;      /* White */
+            --gray: #F5F5F5;       /* Light Gray */
+            --success: #4CAF50;    /* Green */
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background: var(--light);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .top-bar {
+            background: var(--primary);
+            color: var(--light);
+            padding: 8px 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .cart-icon {
+            position: relative;
+            font-size: 22px;
+            color: var(--dark);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(183, 110, 121, 0.1));
+            padding: 150px 5% 100px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: var(--dark);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.8;
+        }
+        
+        .cta-button {
+            background: var(--secondary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            display: inline-block;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* ===== CATEGORIES ===== */
+        .categories {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .category-img {
+            height: 200px;
+            background: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--primary);
+        }
+        
+        .category-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .category-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .category-info p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* ===== PRODUCTS GRID ===== */
+        .products {
+            padding: 80px 5%;
+            background: var(--gray);
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-img {
+            height: 250px;
+            background: var(--gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .product-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .product-colors {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .color-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .add-to-cart {
+            flex: 1;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .add-to-cart:hover {
+            background: var(--secondary);
+        }
+        
+        .whatsapp-order {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        
+        /* ===== CART MODAL ===== */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+            z-index: 2000;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .cart-header h2 {
+            color: var(--secondary);
+            font-size: 24px;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        .cart-items {
+            margin-bottom: 30px;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            background: var(--gray);
+            overflow: hidden;
+        }
+        
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        
+        .cart-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: var(--gray);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #FF4757;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        .cart-total {
+            padding: 20px 0;
+            border-top: 2px solid var(--gray);
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .checkout-btn:hover {
+            background: var(--primary);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 5% 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .cart-modal {
+                width: 100%;
+            }
+            
+            .filter-buttons {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+        }
+        
+        /* ===== UTILITIES ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--primary);
+            font-size: 18px;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        
+        .empty-state i {
+            font-size: 60px;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/234XXXXXXXXXX?text=Hello! I'm interested in your products" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            ✨ Free Shipping on orders over ₦10,000 | Delivery within Lagos & Abuja
+        </div>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <i class="fas fa-crown"></i>
+                <span>Luxe</span>Femme
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#shop">Shop</a>
+                <a href="#categories">Categories</a>
+                <a href="#new">New Arrivals</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Elevate Your Style with Premium Accessories</h1>
+        <p>Discover our curated collection of luxury iPhone cases, designer bags, fashion glasses, and elegant jewelry - crafted for the modern woman.</p>
+        <a href="#shop" class="cta-button">Shop Collection</a>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+        <h2 class="section-title">Shop By Category</h2>
+        <div class="category-grid" id="categoriesContainer">
+            <!-- Categories will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="shop">
+        <h2 class="section-title">Featured Products</h2>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+            <button class="filter-btn" onclick="filterProducts('bags')">Bags</button>
+            <button class="filter-btn" onclick="filterProducts('iphone-cases')">iPhone Cases</button>
+            <button class="filter-btn" onclick="filterProducts('samsung-cases')">Samsung Cases</button>
+            <button class="filter-btn" onclick="filterProducts('camera-lens')">Camera Lens</button>
+            <button class="filter-btn" onclick="filterProducts('glasses')">Fashion Glasses</button>
+            <button class="filter-btn" onclick="filterProducts('necklaces')">Necklaces</button>
+            <button class="filter-btn" onclick="filterProducts('earrings')">Earrings</button>
+        </div>
+        
+        <div class="products-grid" id="productsContainer">
+            <!-- Products will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h2>Your Shopping Bag</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded here -->
+            <div class="empty-state">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your bag is empty</p>
+                <p>Start adding some beautiful accessories!</p>
+            </div>
+        </div>
+        
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">₦0</span>
+        </div>
+        
+        <button class="checkout-btn" onclick="checkout()">
+            <i class="fas fa-lock"></i>
+            Proceed to Checkout
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Luxe Femme</h3>
+                <p>Premium accessories for the sophisticated woman. Quality, style, and elegance in every piece.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop All</a></li>
+                    <li><a href="#new">New Arrivals</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +234 812 345 6789</p>
+                <p><i class="fas fa-envelope"></i> hello@luxefemme.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
+                <p>Mon-Sat: 9AM - 6PM</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2024 Luxe Femme Accessories. All rights reserved.</p>
+            <p>Premium Women's Accessories Store</p>
+        </div>
+    </footer>
+
+    <script>
+        // ========== APP STATE ==========
+        let cart = JSON.parse(localStorage.getItem('luxefemme_cart')) || [];
+        let products = [];
+        let categories = [];
+        
+        // ========== INITIALIZATION ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+        
+        function initializeApp() {
+            loadProducts();
+            loadCategories();
+            updateCartCount();
+            
+            // Set WhatsApp number
+            const whatsappBtn = document.querySelector('.whatsapp-float');
+            whatsappBtn.href = `https://wa.me/2348123456789?text=Hello%20Luxe%20Femme!%20I'm%20interested%20in%20your%20products`;
+        }
+        
+        // ========== PRODUCTS DATABASE ==========
+        // In REAL usage, this would come from Google Sheets API
+        // For now, using hardcoded data with placeholders
+        
+        function loadProducts() {
+            // This is SAMPLE DATA - She will replace with her actual products
+            products = [
+                {
+                    id: 1,
+                    name: "Designer Tote Bag",
+                    price: "₦18,500",
+                    category: "bags",
+                    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop",
+                    colors: ["#FFB6C1", "#B76E79", "#2C2C2C"],
+                    description: "Premium leather tote bag with gold hardware"
+                },
+                {
+                    id: 2,
+                    name: "Rose Gold iPhone Case",
+                    price: "₦4,500",
+                    category: "iphone-cases",
+                    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w-800&auto=format&fit=crop",
+                    colors: ["#B76E79", "#FFB6C1", "#D4AF37"],
+                    description: "Floral design silicone case with rose gold accents"
+                },
+                {
+                    id: 3,
+                    name: "Fashion Sunglasses",
+                    price: "₦7,500",
+                    category: "glasses",
+                    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&auto=format&fit=crop",
+                    colors: ["#2C2C2C", "#D4AF37", "#FFFFFF"],
+                    description: "UV protection cat eye sunglasses"
+                },
+                {
+                    id: 4,
+                    name: "Pearl Necklace",
+                    price: "₦12,000",
+                    category: "necklaces",
+                    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&auto=format&fit=crop",
+                    colors: ["#FFFFFF", "#D4AF37"],
+                    description: "Elegant freshwater pearl necklace"
+                },
+                {
+                    id: 5,
+                    name: "Gold Hoop Earrings",
+                    price: "₦6,500",
+                    category: "earrings",
+                    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&auto=format&fit=crop",
+                    colors: ["#D4AF37", "#FFFFFF"],
+                    description: "14k gold plated hoop earrings"
+                },
+                {
+                    id: 6,
+                    name: "Samsung Clear Case",
+                    price: "₦3,800",
+                    category: "samsung-cases",
+                    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&auto=format&fit=crop",
+                    colors: ["#FFFFFF", "#FFB6C1", "#2C2C2C"],
+                    description: "Crystal clear case with glitter accents"
+                },
+                {
+                    id: 7,
+                    name: "Camera Lens Kit",
+                    price: "₦5,500",
+                    category: "camera-lens",
+                    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&auto=format&fit=crop",
+                    colors: ["#2C2C2C"],
+                    description: "Professional lens accessories set"
+                },
+                {
+                    id: 8,
+                    name: "Evening Clutch Bag",
+                    price: "₦9,500",
+                    category: "bags",
+                    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop",
+                    colors: ["#B76E79", "#D4AF37", "#2C2C2C"],
+                    description: "Sparkling evening clutch for special occasions"
+                }
+            ];
+            
+            displayProducts(products);
+        }
+        
+        function loadCategories() {
+            categories = [
+                { id: "bags", name: "Designer Bags", icon: "fas fa-handbag", count: 2 },
+                { id: "iphone-cases", name: "iPhone Cases", icon: "fas fa-mobile-alt", count: 1 },
+                { id: "samsung-cases", name: "Samsung Cases", icon: "fas fa-mobile", count: 1 },
+                { id: "camera-lens", name: "Camera Lens", icon: "fas fa-camera", count: 1 },
+                { id: "glasses", name: "Fashion Glasses", icon: "fas fa-glasses", count: 1 },
+                { id: "necklaces", name: "Necklaces", icon: "fas fa-gem", count: 1 },
+                { id: "earrings", name: "Earrings", icon: "fas fa-star", count: 1 }
+            ];
+            
+            displayCategories(categories);
+        }
+        
+        // ========== DISPLAY FUNCTIONS ==========
+        function displayCategories(catArray) {
+            const container = document.getElementById('categoriesContainer');
+            container.innerHTML = '';
+            
+            catArray.forEach(category => {
+                const categoryCard = `
+                    <a href="#shop" class="category-card" onclick="filterProducts('${category.id}')">
+                        <div class="category-img">
+                            <i class="${category.icon}"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>${category.name}</h3>
+                            <p>${category.count} ${category.count === 1 ? 'product' : 'products'}</p>
+                        </div>
+                    </a>
+                `;
+                container.innerHTML += categoryCard;
+            });
+        }
+        
+        function displayProducts(prodArray) {
+            const container = document.getElementById('productsContainer');
+            
+            if (prodArray.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1/-1;">
+                        <i class="fas fa-search"></i>
+                        <p>No products found in this category</p>
+                        <p>Check back soon for new arrivals!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = '';
+            
+            prodArray.forEach(product => {
+                const colorsHTML = product.colors.map(color => 
+                    `<div class="color-dot" style="background-color: ${color};"></div>`
+                ).join('');
+                
+                const productCard = `
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="${product.image}" alt="${product.name}" loading="lazy">
+                            <div class="product-badge">New</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <div class="product-price">${product.price}</div>
+                            <div class="product-colors">
+                                ${colorsHTML}
+                            </div>
+                            <p style="color: #666; font-size: 14px; margin-bottom: 15px;">${product.description}</p>
+                            <div class="product-actions">
+                                <button class="add-to-cart" onclick="addToCart(${product.id})">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    Add to Bag
+                                </button>
+                                <a href="https://wa.me/2348123456789?text=I'm%20interested%20in%20${encodeURIComponent(product.name)}%20${encodeURIComponent(product.price)}" 
+                                   class="whatsapp-order" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Order
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += productCard;
+            });
+        }
+        
+        // ========== FILTERING ==========
+        function filterProducts(category) {
+            // Update active filter button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            if (category === 'all') {
+                displayProducts(products);
+            } else {
+                const filteredProducts = products.filter(p => p.category === category);
+                displayProducts(filteredProducts);
+            }
+        }
+        
+        // ========== CART FUNCTIONS ==========
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            saveCart();
+            updateCartCount();
+            showNotification(`${product.name} added to bag!`);
+            
+            // If cart is open, update it
+            if (document.getElementById('cartModal').style.display === 'block') {
+                displayCartItems();
+            }
+        }
+        
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCart();
+            updateCartCount();
+            displayCartItems();
+        }
+        
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (!item) return;
+            
+            item.quantity += change;
+            
+            if (item.quantity < 1) {
+                removeFromCart(productId);
+            } else {
+                saveCart();
+                displayCartItems();
+                updateCartCount();
+            }
+        }
+        
+        function saveCart() {
+            localStorage.setItem('luxefemme_cart', JSON.stringify(cart));
+        }
+        
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+        }
+        
+        function displayCartItems() {
+            const container = document.getElementById('cartItems');
+            const totalElement = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-shopping-bag"></i>
+                        <p>Your bag is empty</p>
+                        <p>Start adding some beautiful accessories!</p>
+                    </div>
+                `;
+                totalElement.textContent = '₦0';
+                return;
+            }
+            
+            let total = 0;
+            let itemsHTML = '';
+            
+            cart.forEach(item => {
+                // Extract numeric price (remove ₦ and commas)
+                const priceNum = parseInt(item.price.replace(/[₦,]/g, '')) || 0;
+                const itemTotal = priceNum * item.quantity;
+                total += itemTotal;
+                
+                itemsHTML += `
+                    <div class="cart-item">
+                        <div class="cart-item-img">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-info">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">${item.price}</div>
+                            <div class="cart-quantity">
+                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                                <button class="remove-item" onclick="removeFromCart(${item.id})">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = itemsHTML;
+            totalElement.textContent = `₦${total.toLocaleString()}`;
+        }
+        
+        // ========== CART MODAL ==========
+        function toggleCart() {
+            const modal = document.getElementById('cartModal');
+            if (modal.style.display === 'block') {
+                modal.style.display = 'none';
+            } else {
+                modal.style.display = 'block';
+                displayCartItems();
+            }
+        }
+        
+        // ========== CHECKOUT ==========
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your bag is empty! Add some items first.');
+                return;
+            }
+            
+            // Build order summary
+            let orderSummary = "Order Details:%0A%0A";
+            let total = 0;
+            
+            cart.forEach(item => {
+                const priceNum = parseInt(item.price.replace(/[₦,]/g, '')) || 0;
+                const itemTotal = priceNum * item.quantity;
+                total += itemTotal;
+                
+                orderSummary += `• ${item.name} x${item.quantity} - ${item.price}%0A`;
+            });
+            
+            orderSummary += `%0ATotal: ₦${total.toLocaleString()}%0A%0A`;
+            orderSummary += "Shipping Information:%0A";
+            orderSummary += "Name: ________%0A";
+            orderSummary += "Phone: ________%0A";
+            orderSummary += "Address: ________%0A%0A";
+            orderSummary += "Please send your details to confirm order!";
+            
+            // Open WhatsApp with order summary
+            const whatsappUrl = `https://wa.me/2348123456789?text=${orderSummary}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // ========== MOBILE MENU ==========
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+        
+        // ========== NOTIFICATIONS ==========
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--secondary);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 3000;
+                animation: slideIn 0.3s ease;
+                font-weight: 500;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
+        // Add CSS for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // ========== INITIAL LOAD ==========
+        // Close cart when clicking outside
+        document.addEventListener('click', function(event) {
+            const cartModal = document.getElementById('cartModal');
+            const cartIcon = document.querySelector('.cart-icon');
+            
+            if (cartModal.style.display === 'block' && 
+                !cartModal.contains(event.target) && 
+                !cartIcon.contains(event.target)) {
+                cartModal.style.display = 'none';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
