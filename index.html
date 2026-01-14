@@ -3,163 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>prettythingsKH - Premium Accessories & Jewelry</title>
+    <title>prettythingsKH - Premium Women's Fashion & Accessories</title>
     <style>
         :root {
-            --primary: #0a0f1e;
-            --secondary: #1a2035;
-            --accent: #ff6b8b;
+            --primary: #ffffff;
+            --secondary: #f9f7ff;
+            --accent: #e75480; /* Feminine pink */
             --accent-light: #ff9eb5;
-            --warning: #ffb800;
-            --danger: #ff4757;
-            --success: #00ff9d;
-            --text: #e2e8f0;
-            --text-muted: #8a94a6;
-            --border: #2a3249;
-            --card-bg: #1a2035;
-            --input-bg: #252d45;
-            --gradient: linear-gradient(135deg, #ff6b8b, #ff8e53);
+            --accent-dark: #d43f6d;
+            --gold: #d4af37; /* Luxury gold */
+            --text: #333333;
+            --text-light: #666666;
+            --text-muted: #888888;
+            --border: #e0e0e0;
+            --card-bg: #ffffff;
+            --input-bg: #f8f8f8;
+            --gradient: linear-gradient(135deg, #e75480, #ff8e53);
+            --gold-gradient: linear-gradient(135deg, #d4af37, #f7ef8a);
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 5px 25px rgba(0, 0, 0, 0.12);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
         
         body {
             background: var(--primary);
             color: var(--text);
-            padding-bottom: 70px;
             min-height: 100vh;
             max-width: 800px;
             margin: 0 auto;
+            line-height: 1.6;
         }
         
-        /* Navigation */
-        .nav {
+        /* Top Navigation */
+        .top-nav {
             position: fixed;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            background: var(--secondary);
-            border-top: 1px solid var(--border);
-            display: flex;
-            padding: 10px;
-            z-index: 1000;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .nav-btn {
-            flex: 1;
-            padding: 12px;
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 12px;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-        
-        .nav-btn.active {
-            background: var(--card-bg);
-            color: var(--accent);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .nav-btn i {
-            display: block;
-            font-size: 18px;
-            margin-bottom: 4px;
-        }
-        
-        /* Screens */
-        .screen {
-            display: none;
-            padding: 20px;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .screen.active {
-            display: block;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Cards */
-        .card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 16px;
-            border: 1px solid var(--border);
-        }
-        
-        .card-header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            z-index: 1000;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
         }
         
-        .card-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text);
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         
-        /* Status Badges */
-        .status-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            background: rgba(255, 107, 139, 0.1);
-            color: var(--accent);
-            border: 1px solid rgba(255, 107, 139, 0.3);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(255, 107, 139, 0.1), rgba(26, 32, 53, 0.8));
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 107, 139, 0.2);
-        }
-        
-        .hero h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
+        .logo i {
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
+        .cart-icon {
+            position: relative;
+            font-size: 20px;
+            color: var(--accent);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 50%;
+            min-width: 18px;
+            text-align: center;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 80px 20px 100px;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--accent-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(231, 84, 128, 0.1), rgba(255, 142, 83, 0.05));
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid rgba(231, 84, 128, 0.15);
+            box-shadow: var(--shadow);
+        }
+        
+        .hero h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: var(--accent-dark);
+        }
+        
         .hero-subtitle {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 15px;
         }
         
         /* Product Grid */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-top: 20px;
+            gap: 20px;
+            margin-bottom: 30px;
         }
         
         @media (max-width: 600px) {
@@ -169,22 +157,24 @@
         }
         
         .product-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
+            background: var(--card-bg);
+            border-radius: 15px;
             overflow: hidden;
             border: 1px solid var(--border);
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
         }
         
         .product-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-light);
         }
         
         .product-image {
             width: 100%;
-            height: 200px;
-            background: var(--input-bg);
+            height: 180px;
+            background: var(--secondary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -195,68 +185,83 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
         }
         
         .product-info {
-            padding: 16px;
+            padding: 15px;
+        }
+        
+        .product-category {
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .product-title {
             font-weight: 600;
             margin-bottom: 8px;
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text);
-        }
-        
-        .product-category {
-            color: var(--accent);
-            font-size: 12px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            line-height: 1.4;
         }
         
         .product-price {
             font-weight: 700;
             font-size: 18px;
-            color: var(--accent);
+            color: var(--accent-dark);
             margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .product-price::before {
+            content: '₦';
+            font-size: 14px;
         }
         
         .product-stock {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 16px;
+            gap: 6px;
+            margin-bottom: 15px;
             font-size: 12px;
         }
         
         .in-stock {
-            color: var(--success);
+            color: #27ae60;
         }
         
         .low-stock {
-            color: var(--warning);
+            color: #f39c12;
         }
         
         .out-stock {
-            color: var(--danger);
+            color: #e74c3c;
         }
         
         /* Buttons */
         .btn {
-            padding: 14px;
+            padding: 14px 20px;
             border-radius: 12px;
             border: none;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
             transition: all 0.3s;
-            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
+            width: 100%;
         }
         
         .btn-primary {
@@ -264,44 +269,68 @@
             color: white;
         }
         
+        .btn-primary:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+        
         .btn-secondary {
-            background: var(--input-bg);
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-        
-        .btn-danger {
-            background: linear-gradient(135deg, var(--danger), #ff2e43);
-            color: white;
-        }
-        
-        .btn-success {
-            background: linear-gradient(135deg, var(--success), #00cc7a);
-            color: var(--primary);
+            background: var(--secondary);
+            color: var(--accent-dark);
+            border: 2px solid var(--accent-light);
         }
         
         .btn-small {
-            padding: 8px 16px;
+            padding: 10px 16px;
             font-size: 14px;
             width: auto;
+            border-radius: 10px;
         }
         
-        /* Cart Items */
+        .btn-add-to-cart {
+            background: var(--accent);
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            border: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .btn-add-to-cart:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Cart Section */
+        .cart-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        
         .cart-item {
             display: flex;
-            gap: 16px;
-            padding: 16px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border: 1px solid var(--border);
+            gap: 15px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
         }
         
         .cart-item-image {
             width: 80px;
             height: 80px;
-            border-radius: 8px;
-            background: var(--input-bg);
+            border-radius: 10px;
+            background: var(--secondary);
             overflow: hidden;
             flex-shrink: 0;
         }
@@ -318,45 +347,83 @@
         
         .cart-item-title {
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
+            font-size: 15px;
         }
         
         .cart-item-price {
-            color: var(--accent);
+            color: var(--accent-dark);
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
         .cart-item-controls {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
         
         .quantity-control {
             display: flex;
             align-items: center;
-            gap: 8px;
-            background: var(--input-bg);
-            padding: 4px 8px;
-            border-radius: 8px;
+            gap: 10px;
+            background: var(--secondary);
+            padding: 6px 12px;
+            border-radius: 10px;
         }
         
         .quantity-btn {
             background: none;
             border: none;
-            color: var(--text);
+            color: var(--accent);
             cursor: pointer;
             padding: 4px 8px;
             font-size: 16px;
+            font-weight: 600;
         }
         
         .quantity {
             min-width: 30px;
             text-align: center;
+            font-weight: 600;
         }
         
-        /* Forms */
+        /* Order Summary */
+        .order-summary {
+            background: var(--secondary);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 25px 0;
+            border: 1px solid var(--border);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .summary-total {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--accent-dark);
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        /* Checkout Section */
+        .checkout-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        
         .form-group {
             margin-bottom: 20px;
         }
@@ -366,108 +433,149 @@
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--text);
+            font-size: 15px;
         }
         
         .form-input {
             width: 100%;
             padding: 14px;
             background: var(--input-bg);
-            border: 1px solid var(--border);
+            border: 2px solid var(--border);
             border-radius: 10px;
             color: var(--text);
-            font-size: 16px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: white;
         }
         
         .form-select {
             width: 100%;
             padding: 14px;
             background: var(--input-bg);
-            border: 1px solid var(--border);
+            border: 2px solid var(--border);
             border-radius: 10px;
             color: var(--text);
-            font-size: 16px;
+            font-size: 15px;
             appearance: none;
         }
         
-        /* Order Summary */
-        .order-summary {
-            background: rgba(255, 107, 139, 0.1);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            border: 1px solid rgba(255, 107, 139, 0.3);
-        }
-        
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 12px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .summary-total {
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--accent);
-            border-bottom: none;
-        }
-        
-        /* Alert */
-        .alert {
-            padding: 16px;
-            border-radius: 12px;
-            margin: 16px 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-        
-        .alert-success {
-            background: rgba(0, 255, 157, 0.1);
-            border: 1px solid rgba(0, 255, 157, 0.3);
-        }
-        
-        .alert-warning {
-            background: rgba(255, 184, 0, 0.1);
-            border: 1px solid rgba(255, 184, 0, 0.3);
-        }
-        
-        .alert-danger {
-            background: rgba(255, 71, 87, 0.1);
-            border: 1px solid rgba(255, 71, 87, 0.3);
-        }
-        
         /* Info Cards */
-        .info-grid {
+        .info-cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin: 20px 0;
+            gap: 15px;
+            margin: 20px 0 30px;
         }
         
         .info-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--secondary);
             border-radius: 12px;
-            padding: 16px;
+            padding: 18px;
             text-align: center;
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-3px);
         }
         
         .info-icon {
-            font-size: 24px;
-            margin-bottom: 8px;
+            font-size: 22px;
+            margin-bottom: 10px;
             color: var(--accent);
+        }
+        
+        /* Contact Bar */
+        .contact-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-btn:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+        }
+        
+        .contact-info {
+            text-align: right;
+        }
+        
+        .contact-info div {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .contact-info .phone {
+            font-weight: 600;
+            color: var(--accent-dark);
+            font-size: 15px;
+        }
+        
+        /* Important Notices */
+        .notices {
+            background: #fff8f6;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 1px solid #ffd1c6;
+        }
+        
+        .notices h3 {
+            color: var(--accent-dark);
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .notice-item {
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 3px solid var(--accent);
+            padding-left: 15px;
         }
         
         /* Loading */
         .loading {
             text-align: center;
-            padding: 40px;
-            color: var(--text-muted);
+            padding: 60px 20px;
+            color: var(--text-light);
         }
         
         .loading-spinner {
-            border: 3px solid rgba(255, 107, 139, 0.3);
+            border: 3px solid rgba(231, 84, 128, 0.2);
             border-top: 3px solid var(--accent);
             border-radius: 50%;
             width: 40px;
@@ -484,393 +592,219 @@
         /* Empty State */
         .empty-state {
             text-align: center;
-            padding: 40px 20px;
-            color: var(--text-muted);
+            padding: 50px 20px;
+            color: var(--text-light);
         }
         
         .empty-state i {
             font-size: 48px;
-            margin-bottom: 16px;
-            opacity: 0.3;
+            margin-bottom: 15px;
+            color: var(--border);
+        }
+        
+        /* Toast */
+        .toast {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: var(--gradient);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            z-index: 2000;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            max-width: 300px;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        
+        /* Delivery Notice */
+        .delivery-notice {
+            background: rgba(231, 84, 128, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid rgba(231, 84, 128, 0.2);
+            font-size: 14px;
+            color: var(--text-light);
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Home Screen -->
-    <div id="home" class="screen active">
-        <div class="hero">
-            <h1>prettythingsKH</h1>
-            <div class="hero-subtitle">Premium Accessories & Jewelry</div>
-            <div class="status-badge">✨ Premium Quality Guaranteed</div>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <div class="logo">
+            <i class="fas fa-gem"></i>
+            prettythingsKH
         </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">
-                    <i class="fas fa-shipping-fast"></i>
-                    Quick Info
-                </div>
-            </div>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon"><i class="fas fa-truck"></i></div>
-                    <div style="font-weight: 600;">Nigeria: 1-2 Days</div>
-                    <div style="font-size: 12px; color: var(--text-muted);">Fast Delivery</div>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon"><i class="fas fa-globe"></i></div>
-                    <div style="font-weight: 600;">Worldwide Shipping</div>
-                    <div style="font-size: 12px; color: var(--text-muted);">Available</div>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon"><i class="fas fa-shield-alt"></i></div>
-                    <div style="font-weight: 600;">Quality Guarantee</div>
-                    <div style="font-size: 12px; color: var(--text-muted);">No Refunds Policy</div>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon"><i class="fas fa-store"></i></div>
-                    <div style="font-weight: 600;">2 Locations</div>
-                    <div style="font-size: 12px; color: var(--text-muted);">Kaduna & Zaria</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">
-                    <i class="fas fa-fire"></i>
-                    Featured Products
-                </div>
-                <button class="btn btn-small btn-primary" onclick="showScreen('shop')">
-                    View All <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-            
-            <div id="featuredProducts" class="product-grid">
-                <div class="loading">
-                    <div class="loading-spinner"></div>
-                    <div>Loading featured products...</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">
-                    <i class="fas fa-map-marker-alt"></i>
-                    Our Locations
-                </div>
-            </div>
-            
-            <div style="margin-bottom: 20px;">
-                <div style="font-weight: 600; color: var(--accent); margin-bottom: 8px;">
-                    <i class="fas fa-store"></i> Kaduna Branch
-                </div>
-                <div style="color: var(--text-muted);">Millenium City, Kaduna</div>
-                <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">
-                    Open: 9AM - 7PM Daily
-                </div>
-            </div>
-            
-            <div>
-                <div style="font-weight: 600; color: var(--accent); margin-bottom: 8px;">
-                    <i class="fas fa-store"></i> Zaria Branch
-                </div>
-                <div style="color: var(--text-muted);">Rimin Kambari, Zaria</div>
-                <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">
-                    Open: 9AM - 6PM Daily
-                </div>
-            </div>
+        <div class="cart-icon" onclick="scrollToSection('cart')">
+            <i class="fas fa-shopping-bag"></i>
+            <div class="cart-count" id="cartCount">0</div>
         </div>
     </div>
-    
-    <!-- Shop Screen -->
-    <div id="shop" class="screen">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">
-                    <i class="fas fa-shopping-bag"></i>
-                    Shop All Products
-                </div>
-                <div id="cartBadge" class="status-badge" style="display: none;">0 items</div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Premium Women's Fashion & Accessories</h1>
+            <div class="hero-subtitle">Elegance Redefined • Quality Guaranteed • Fast Delivery</div>
+            <div style="background: var(--gold-gradient); padding: 8px 16px; border-radius: 20px; display: inline-block; font-weight: 600; font-size: 14px; color: #8b6914;">
+                <i class="fas fa-crown"></i> Luxury Collection
+            </div>
+        </div>
+
+        <!-- Products Section -->
+        <div class="section" id="products">
+            <div class="section-title">
+                <i class="fas fa-star"></i>
+                Featured Products
             </div>
             
-            <div class="alert alert-warning">
-                <i class="fas fa-exclamation-circle"></i>
-                <div>
-                    <div style="font-weight: 600;">Free Shipping Available</div>
-                    <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">
-                        Orders over ₦20,000 qualify for free shipping in Nigeria
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Filter by Category</label>
-                <select class="form-select" id="categoryFilter" onchange="filterProducts()">
-                    <option value="all">All Products</option>
-                    <option value="bracelet">Bracelets</option>
-                    <option value="necklace">Necklaces</option>
-                    <option value="earring">Earrings</option>
-                    <option value="ring">Rings</option>
-                    <option value="anklet">Anklets</option>
-                    <option value="accessory">Accessories</option>
-                </select>
+            <div class="delivery-notice">
+                <i class="fas fa-info-circle"></i> Delivery fee is calculated after checkout based on your location.
             </div>
             
             <div id="productsContainer">
                 <div class="loading">
                     <div class="loading-spinner"></div>
-                    <div>Loading products from Google Sheets...</div>
+                    <div>Loading beautiful products...</div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!-- Cart Screen -->
-    <div id="cart" class="screen">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">
-                    <i class="fas fa-shopping-cart"></i>
-                    Your Cart
-                </div>
-                <button class="btn btn-small btn-danger" onclick="clearCart()" id="clearCartBtn" style="display: none;">
-                    <i class="fas fa-trash"></i> Clear
-                </button>
+
+        <!-- Cart Section -->
+        <div class="section" id="cart">
+            <div class="section-title">
+                <i class="fas fa-shopping-bag"></i>
+                Your Shopping Bag
             </div>
             
-            <div id="cartItems">
+            <div class="cart-section" id="cartSection">
                 <div class="empty-state">
-                    <i class="fas fa-shopping-cart"></i>
-                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Your cart is empty</div>
+                    <i class="fas fa-shopping-bag"></i>
+                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--accent-dark);">Your bag is empty</div>
                     <div>Add some beautiful accessories to get started!</div>
                 </div>
             </div>
-            
-            <div id="orderSummary" style="display: none;">
-                <div class="order-summary">
-                    <div class="summary-row">
-                        <div>Subtotal</div>
-                        <div id="subtotal">₦0</div>
-                    </div>
-                    <div class="summary-row">
-                        <div>Shipping</div>
-                        <div id="shipping">₦0</div>
-                    </div>
-                    <div class="summary-row summary-total">
-                        <div>Total</div>
-                        <div id="total">₦0</div>
-                    </div>
-                </div>
-                
-                <button class="btn btn-primary" onclick="showScreen('checkout')">
-                    <i class="fas fa-lock"></i> Proceed to Checkout
-                </button>
-            </div>
         </div>
-    </div>
-    
-    <!-- Checkout Screen -->
-    <div id="checkout" class="screen">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">
-                    <i class="fas fa-credit-card"></i>
-                    Checkout
-                </div>
-                <div class="status-badge" id="cartSummary">0 items</div>
+
+        <!-- Checkout Section -->
+        <div class="section" id="checkout">
+            <div class="section-title">
+                <i class="fas fa-credit-card"></i>
+                Checkout
             </div>
             
-            <div id="checkoutItems" style="margin-bottom: 20px;">
-                <!-- Cart items will be loaded here -->
-            </div>
-            
-            <form id="checkoutForm" onsubmit="processCheckout(event)">
-                <div class="form-group">
-                    <label class="form-label">Full Name *</label>
-                    <input type="text" class="form-input" id="fullName" required placeholder="Enter your full name">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Email Address *</label>
-                    <input type="email" class="form-input" id="email" required placeholder="your@email.com">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Phone Number *</label>
-                    <input type="tel" class="form-input" id="phone" required placeholder="080XXXXXXXX">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Delivery Location *</label>
-                    <select class="form-select" id="deliveryLocation" required>
-                        <option value="">Select location</option>
-                        <option value="kaduna">Kaduna (Millenium City)</option>
-                        <option value="zaria">Zaria (Rimin Kambari)</option>
-                        <option value="lagos">Lagos</option>
-                        <option value="abuja">Abuja</option>
-                        <option value="other-nigeria">Other Nigeria Location</option>
-                        <option value="international">International Shipping</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Delivery Address *</label>
-                    <textarea class="form-input" id="deliveryAddress" required rows="3" placeholder="Full address including street, city, and state"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Payment Method *</label>
-                    <select class="form-select" id="paymentMethod" required>
-                        <option value="">Select payment method</option>
-                        <option value="palm">PalmPay (7040596806 - Ummalkhairi Labaran)</option>
-                        <option value="transfer">Bank Transfer</option>
-                        <option value="paypal">PayPal</option>
-                        <option value="on-delivery">Cash on Delivery (Nigeria Only)</option>
-                    </select>
-                </div>
-                
-                <div class="alert alert-warning">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <div>
-                        <div style="font-weight: 600;">Important Notice</div>
-                        <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">
-                            • No refunds policy (quality guarantee only)<br>
-                            • Delivery: 1-2 days Nigeria, 5-14 days international<br>
-                            • Orders shipped after payment confirmation
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="order-summary">
-                    <div class="summary-row summary-total">
-                        <div>Total to Pay</div>
-                        <div id="checkoutTotal">₦0</div>
-                    </div>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-paper-plane"></i> Submit Order
-                </button>
-            </form>
-            
-            <button class="btn btn-secondary" onclick="showScreen('cart')" style="margin-top: 12px;">
-                <i class="fas fa-arrow-left"></i> Back to Cart
-            </button>
-        </div>
-    </div>
-    
-    <!-- About Screen -->
-    <div id="about" class="screen">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">
-                    <i class="fas fa-info-circle"></i>
-                    About prettythingsKH
-                </div>
-                <div class="status-badge">✨ Since 2023</div>
-            </div>
-            
-            <div style="margin-bottom: 24px;">
-                <p style="color: var(--text-muted); line-height: 1.6;">
-                    Welcome to prettythingsKH - your premier destination for exquisite accessories and jewelry. 
-                    We specialize in bringing you high-quality, trendy pieces that complement your style and 
-                    make you feel confident and beautiful every day.
-                </p>
-            </div>
-            
-            <div class="card-header">
-                <div class="card-title">
-                    <i class="fas fa-phone"></i>
-                    Contact Information
-                </div>
-            </div>
-            
-            <div style="margin-bottom: 20px;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;">
-                    <i class="fas fa-whatsapp" style="color: #25D366;"></i>
-                    <div>
-                        <div style="font-weight: 600;">WhatsApp</div>
-                        <div style="color: var(--text-muted);">0708488790</div>
-                    </div>
-                </div>
-                
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;">
-                    <i class="fas fa-money-check-alt" style="color: var(--accent);"></i>
-                    <div>
-                        <div style="font-weight: 600;">PalmPay</div>
-                        <div style="color: var(--text-muted);">7040596806 (Ummalkhairi Labaran)</div>
-                    </div>
-                </div>
-                
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;">
-                    <i class="fas fa-envelope" style="color: var(--accent);"></i>
-                    <div>
-                        <div style="font-weight: 600;">Email</div>
-                        <div style="color: var(--text-muted);">prettythingskh@gmail.com</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card-header">
-                <div class="card-title">
-                    <i class="fas fa-share-alt"></i>
-                    Social Media
-                </div>
-            </div>
-            
-            <div style="display: flex; gap: 12px; margin-top: 16px;">
-                <a href="https://instagram.com/prettythingskh" target="_blank" style="flex: 1;">
-                    <button class="btn btn-secondary" style="background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </button>
-                </a>
-                <a href="https://tiktok.com/@prettythingskh" target="_blank" style="flex: 1;">
-                    <button class="btn btn-secondary" style="background: linear-gradient(45deg, #000000, #25F4EE, #FE2C55);">
-                        <i class="fab fa-tiktok"></i> TikTok
-                    </button>
-                </a>
-            </div>
-            
-            <div class="alert alert-warning" style="margin-top: 20px;">
-                <i class="fas fa-truck"></i>
-                <div>
-                    <div style="font-weight: 600;">Delivery Information</div>
-                    <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">
-                        • Nigeria: 1-2 business days<br>
-                        • International: 5-14 business days<br>
-                        • Free shipping on orders over ₦20,000 in Nigeria
-                    </div>
+            <div class="checkout-section" id="checkoutSection">
+                <div class="empty-state">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--accent-dark);">Add items to your bag first</div>
+                    <div>Browse our collection and add items to proceed</div>
                 </div>
             </div>
         </div>
+
+        <!-- Important Notices -->
+        <div class="section" id="notices">
+            <div class="section-title">
+                <i class="fas fa-exclamation-circle"></i>
+                Important Information
+            </div>
+            
+            <div class="notices">
+                <h3><i class="fas fa-shipping-fast"></i> Delivery Information</h3>
+                <div class="notice-item">
+                    <strong>Nigeria Delivery:</strong> 1-2 business days
+                </div>
+                <div class="notice-item">
+                    <strong>International Shipping:</strong> 5-14 business days
+                </div>
+                <div class="notice-item">
+                    <strong>Delivery Fee:</strong> Calculated after checkout based on location
+                </div>
+                
+                <h3 style="margin-top: 25px;"><i class="fas fa-credit-card"></i> Payment Methods</h3>
+                <div class="notice-item">
+                    <strong>PalmPay:</strong> 7040596806 (Ummalkhairi Labaran)
+                </div>
+                <div class="notice-item">
+                    <strong>Bank Transfer:</strong> Available upon request
+                </div>
+                <div class="notice-item">
+                    <strong>PayPal:</strong> Available for international orders
+                </div>
+                
+                <h3 style="margin-top: 25px;"><i class="fas fa-store"></i> Our Locations</h3>
+                <div class="notice-item">
+                    <strong>Kaduna Branch:</strong> Millenium City
+                </div>
+                <div class="notice-item">
+                    <strong>Zaria Branch:</strong> Rimin Kambari
+                </div>
+                <div class="notice-item">
+                    <strong>Store Hours:</strong> 9AM - 7PM Daily
+                </div>
+                
+                <h3 style="margin-top: 25px;"><i class="fas fa-shield-alt"></i> Policies</h3>
+                <div class="notice-item">
+                    <strong>Quality Guarantee:</strong> All products are quality checked
+                </div>
+                <div class="notice-item">
+                    <strong>No Returns/Refunds:</strong> Due to hygiene reasons
+                </div>
+                <div class="notice-item">
+                    <strong>Exchange Policy:</strong> Defective items can be exchanged within 24 hours
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info Cards -->
+        <div class="info-cards">
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-truck"></i></div>
+                <div style="font-weight: 600; font-size: 15px;">Fast Shipping</div>
+                <div style="font-size: 13px; color: var(--text-light); margin-top: 4px;">Nigeria: 1-2 Days</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-globe"></i></div>
+                <div style="font-weight: 600; font-size: 15px;">Worldwide</div>
+                <div style="font-size: 13px; color: var(--text-light); margin-top: 4px;">International Shipping</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-shield-alt"></i></div>
+                <div style="font-weight: 600; font-size: 15px;">Quality Checked</div>
+                <div style="font-size: 13px; color: var(--text-light); margin-top: 4px;">Premium Materials</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-headset"></i></div>
+                <div style="font-weight: 600; font-size: 15px;">24/7 Support</div>
+                <div style="font-size: 13px; color: var(--text-light); margin-top: 4px;">WhatsApp Available</div>
+            </div>
+        </div>
     </div>
-    
-    <!-- Navigation -->
-    <div class="nav">
-        <button class="nav-btn active" onclick="showScreen('home')">
-            <i class="fas fa-home"></i>
-            Home
-        </button>
-        <button class="nav-btn" onclick="showScreen('shop')">
-            <i class="fas fa-shopping-bag"></i>
-            Shop
-        </button>
-        <button class="nav-btn" onclick="showScreen('cart')">
-            <i class="fas fa-shopping-cart"></i>
-            Cart <span id="cartCounter" style="display: none;">(0)</span>
-        </button>
-        <button class="nav-btn" onclick="showScreen('checkout')">
-            <i class="fas fa-credit-card"></i>
-            Checkout
-        </button>
-        <button class="nav-btn" onclick="showScreen('about')">
-            <i class="fas fa-info-circle"></i>
-            About
-        </button>
+
+    <!-- Contact Bar -->
+    <div class="contact-bar">
+        <a href="https://wa.me/234708488790" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Chat on WhatsApp
+        </a>
+        <div class="contact-info">
+            <div class="phone">0708488790</div>
+            <div>prettythingskh@gmail.com</div>
+        </div>
     </div>
 
 <script>
@@ -878,12 +812,15 @@
     const appState = {
         products: [],
         cart: [],
-        featuredProducts: [],
         categories: []
     };
 
     // ========== GOOGLE SHEETS API ==========
-    const GOOGLE_SHEETS_URL = 'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLgFdDV1cUhIA9_jAihJH5HnNlTm-TyYwUgR64YR1ClvhTCnRy2XQgCS5em7Wy41uxcObUYRwvHAEsvGjAkMXxJSyYJi1BfoojLYxG2dR8Lr-_p0J2bh-mVcfLB-jTw57VEe1hxeW7xPn7Itg7imiNWLoyGg4HGLlcUewWRq3FjlphFmO67-vepdPWCJUjpqNLnuXy87mgW2w_OH0_lmZiivf-9_YNOnDUpLWhrfasA_Yk-cUYoAQ60ZtNUAFLrYL6xJp7vujORjRCsq0rTjleMVMEoitgwQhIlxXeKL&lib=MlDbrful0osl0nNT-pooMv28CMqtS4jU3';
+    // Try multiple possible API endpoints
+    const GOOGLE_SHEETS_ENDPOINTS = [
+        'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLgFdDV1cUhIA9_jAihJH5HnNlTm-TyYwUgR64YR1ClvhTCnRy2XQgCS5em7Wy41uxcObUYRwvHAEsvGjAkMXxJSyYJi1BfoojLYxG2dR8Lr-_p0J2bh-mVcfLB-jTw57VEe1hxeW7xPn7Itg7imiNWLoyGg4HGLlcUewWRq3FjlphFmO67-vepdPWCJUjpqNLnuXy87mgW2w_OH0_lmZiivf-9_YNOnDUpLWhrfasA_Yk-cUYoAQ60ZtNUAFLrYL6xJp7vujORjRCsq0rTjleMVMEoitgwQhIlxXeKL&lib=MlDbrful0osl0nNT-pooMv28CMqtS4jU3',
+        'https://script.google.com/macros/s/AKfycbxq41iSmxw7fMdb3-7R4N4sRfQEY_1INw-23h7VKfeoI_7MV8z9Hv8Xj3gR0SgUDSs_RQ/exec'
+    ];
 
     // ========== INITIALIZATION ==========
     document.addEventListener('DOMContentLoaded', function() {
@@ -894,278 +831,183 @@
         loadCart();
         loadProducts();
         updateCartUI();
+        setupEventListeners();
     }
 
-    // ========== SCREEN MANAGEMENT ==========
-    function showScreen(screenId) {
-        // Hide all screens
-        document.querySelectorAll('.screen').forEach(screen => {
-            screen.classList.remove('active');
+    function setupEventListeners() {
+        // Smooth scroll to sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
         });
-        
-        // Update navigation
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        
-        // Show selected screen
-        document.getElementById(screenId).classList.add('active');
-        
-        // Find and activate corresponding nav button
-        const navButtons = document.querySelectorAll('.nav-btn');
-        const screenIndex = ['home', 'shop', 'cart', 'checkout', 'about'].indexOf(screenId);
-        if (screenIndex !== -1 && navButtons[screenIndex]) {
-            navButtons[screenIndex].classList.add('active');
-        }
-        
-        // Update screen-specific content
-        if (screenId === 'cart') {
-            updateCartScreen();
-        } else if (screenId === 'checkout') {
-            updateCheckoutScreen();
-        } else if (screenId === 'shop') {
-            // Already handled by filterProducts()
+    }
+
+    function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     }
 
     // ========== PRODUCT MANAGEMENT ==========
     async function loadProducts() {
-        try {
-            console.log('Loading products from Google Sheets...');
-            
-            // Try to fetch from Google Sheets API
-            const response = await fetch(GOOGLE_SHEETS_URL);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            console.log('Products loaded:', data);
-            
-            if (data.status === 'success' && data.data) {
-                // Process Google Sheets data
-                appState.products = data.data.map(item => ({
-                    id: item.id || generateId(),
-                    name: item.name || 'Product Name',
-                    category: item.category || 'accessory',
-                    price: parseFloat(item.price) || 0,
-                    stock: parseInt(item.stock) || 0,
-                    description: item.description || '',
-                    image: item.image || 'https://via.placeholder.com/300x300/1a2035/ff6b8b?text=Product+Image'
-                }));
-            } else {
-                // Fallback to sample data if API fails
-                console.warn('Using fallback sample data');
-                appState.products = getSampleProducts();
-            }
-            
-            // Update categories
-            appState.categories = [...new Set(appState.products.map(p => p.category))];
-            
-            // Get featured products (first 4 in stock)
-            appState.featuredProducts = appState.products
-                .filter(p => p.stock > 0)
-                .slice(0, 4);
-            
-            // Update UI
-            displayFeaturedProducts();
-            filterProducts();
-            
-        } catch (error) {
-            console.error('Error loading products:', error);
-            // Use sample data as fallback
-            appState.products = getSampleProducts();
-            appState.featuredProducts = appState.products.slice(0, 4);
-            appState.categories = [...new Set(appState.products.map(p => p.category))];
-            
-            // Update UI with fallback data
-            displayFeaturedProducts();
-            filterProducts();
-            
-            // Show error message
-            const productsContainer = document.getElementById('productsContainer');
-            if (productsContainer) {
-                productsContainer.innerHTML = `
-                    <div class="alert alert-warning">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <div>
-                            <div style="font-weight: 600;">Using Sample Data</div>
-                            <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">
-                                Google Sheets API temporarily unavailable. Showing sample products.
-                            </div>
-                        </div>
-                    </div>
-                    ${renderProducts(appState.products)}
-                `;
+        let productsLoaded = false;
+        
+        // Try each API endpoint
+        for (const endpoint of GOOGLE_SHEETS_ENDPOINTS) {
+            try {
+                console.log(`Trying endpoint: ${endpoint}`);
+                const response = await fetch(endpoint, {
+                    mode: 'cors',
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('API Response:', data);
+                    
+                    if (data && data.data && Array.isArray(data.data)) {
+                        processProductsData(data.data);
+                        productsLoaded = true;
+                        console.log(`Successfully loaded products from ${endpoint}`);
+                        break;
+                    } else if (data && Array.isArray(data)) {
+                        // If data is directly an array
+                        processProductsData(data);
+                        productsLoaded = true;
+                        console.log(`Successfully loaded products from ${endpoint}`);
+                        break;
+                    }
+                }
+            } catch (error) {
+                console.warn(`Failed to load from ${endpoint}:`, error);
+                continue;
             }
         }
+        
+        if (!productsLoaded) {
+            console.warn('All API endpoints failed, using sample data');
+            useSampleProducts();
+        }
+        
+        displayProducts();
     }
 
-    function getSampleProducts() {
-        return [
+    function processProductsData(productsData) {
+        appState.products = productsData.map((item, index) => ({
+            id: item.id || `item_${index}_${Date.now()}`,
+            name: item.name || item.product || 'Beautiful Accessory',
+            category: (item.category || 'accessory').toLowerCase(),
+            price: parseFloat(item.price) || 0,
+            stock: parseInt(item.stock) || 0,
+            description: item.description || 'Premium quality accessory',
+            image: item.image || item.img || `https://source.unsplash.com/random/300x300/?jewelry,${index}`
+        })).filter(product => product.name && product.price > 0);
+        
+        console.log('Processed products:', appState.products);
+    }
+
+    function useSampleProducts() {
+        const sampleProducts = [
             {
                 id: '1',
-                name: 'Gold Plated Bracelet',
+                name: 'Gold Plated Crystal Bracelet',
                 category: 'bracelet',
-                price: 8500,
+                price: 12500,
                 stock: 15,
-                description: 'Elegant gold plated bracelet with intricate design',
-                image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop'
+                description: 'Elegant gold plated bracelet with Swarovski crystals',
+                image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop&crop=center'
             },
             {
                 id: '2',
-                name: 'Silver Pearl Necklace',
+                name: 'Silver Pearl Pendant Necklace',
                 category: 'necklace',
-                price: 12500,
+                price: 18500,
                 stock: 8,
-                description: 'Beautiful silver necklace with genuine pearls',
-                image: 'https://images.unsplash.com/photo-1594576722512-582d5577dc56?w-400&h=400&fit=crop'
+                description: 'Genuine pearl pendant on silver chain',
+                image: 'https://images.unsplash.com/photo-1594576722512-582d5577dc56?w=400&h=400&fit=crop&crop=center'
             },
             {
                 id: '3',
-                name: 'Diamond Stud Earrings',
+                name: 'Diamond Stud Earrings Set',
                 category: 'earring',
-                price: 9500,
-                stock: 20,
-                description: 'Classic diamond stud earrings for any occasion',
-                image: 'https://images.unsplash.com/photo-1611598899235-d5877a66d0da?w=400&h=400&fit=crop'
+                price: 21500,
+                stock: 12,
+                description: 'Set of premium diamond stud earrings',
+                image: 'https://images.unsplash.com/photo-1611598899235-d5877a66d0da?w=400&h=400&fit=crop&crop=center'
             },
             {
                 id: '4',
-                name: 'Rose Gold Ring Set',
+                name: 'Rose Gold Stackable Rings',
                 category: 'ring',
-                price: 11000,
-                stock: 12,
-                description: 'Set of 3 rose gold stackable rings',
-                image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400&h=400&fit=crop'
+                price: 16500,
+                stock: 10,
+                description: 'Set of 3 beautiful stackable rings',
+                image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400&h=400&fit=crop&crop=center'
             },
             {
                 id: '5',
-                name: 'Silver Anklet with Charms',
+                name: 'Delicate Silver Anklet',
                 category: 'anklet',
-                price: 6500,
-                stock: 25,
-                description: 'Delicate silver anklet with charm detailing',
-                image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop'
+                price: 9500,
+                stock: 20,
+                description: 'Fine silver anklet with charm details',
+                image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop&crop=center'
             },
             {
                 id: '6',
-                name: 'Luxury Watch',
-                category: 'accessory',
-                price: 25000,
+                name: 'Designer Leather Handbag',
+                category: 'bag',
+                price: 35000,
                 stock: 5,
-                description: 'Premium luxury watch with leather strap',
-                image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400&h=400&fit=crop'
-            },
-            {
-                id: '7',
-                name: 'Crystal Pendant Necklace',
-                category: 'necklace',
-                price: 14500,
-                stock: 10,
-                description: 'Crystal pendant necklace with gold chain',
-                image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop'
-            },
-            {
-                id: '8',
-                name: 'Bangle Set (Pack of 3)',
-                category: 'bracelet',
-                price: 7500,
-                stock: 18,
-                description: 'Set of 3 adjustable bangles in different designs',
-                image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop'
+                description: 'Premium leather designer handbag',
+                image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=400&fit=crop&crop=center'
             }
         ];
+        
+        appState.products = sampleProducts;
     }
 
-    function generateId() {
-        return Date.now().toString(36) + Math.random().toString(36).substr(2);
-    }
-
-    function displayFeaturedProducts() {
-        const container = document.getElementById('featuredProducts');
+    function displayProducts() {
+        const container = document.getElementById('productsContainer');
         if (!container) return;
         
-        if (appState.featuredProducts.length === 0) {
+        if (appState.products.length === 0) {
             container.innerHTML = `
                 <div class="empty-state">
                     <i class="fas fa-box-open"></i>
-                    <div>No featured products available</div>
+                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--accent-dark);">No Products Available</div>
+                    <div>Please check back later or contact us</div>
                 </div>
             `;
             return;
         }
         
-        container.innerHTML = appState.featuredProducts.map(product => `
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300/1a2035/ff6b8b?text=Product+Image'">
-                </div>
-                <div class="product-info">
-                    <div class="product-category">${product.category.toUpperCase()}</div>
-                    <div class="product-title">${product.name}</div>
-                    <div class="product-price">₦${product.price.toLocaleString()}</div>
-                    <div class="product-stock">
-                        <i class="fas fa-box${product.stock > 10 ? ' in-stock' : product.stock > 0 ? ' low-stock' : ' out-stock'}"></i>
-                        <span class="${product.stock > 10 ? 'in-stock' : product.stock > 0 ? 'low-stock' : 'out-stock'}">
-                            ${product.stock > 10 ? 'In Stock' : product.stock > 0 ? `Low Stock (${product.stock})` : 'Out of Stock'}
-                        </span>
-                    </div>
-                    <button class="btn btn-primary btn-small" onclick="addToCart('${product.id}')" ${product.stock === 0 ? 'disabled' : ''}>
-                        <i class="fas fa-cart-plus"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    function filterProducts() {
-        const container = document.getElementById('productsContainer');
-        const filter = document.getElementById('categoryFilter')?.value || 'all';
-        
-        if (!container) return;
-        
-        let filteredProducts = appState.products;
-        
-        if (filter !== 'all') {
-            filteredProducts = appState.products.filter(p => p.category === filter);
-        }
-        
-        if (filteredProducts.length === 0) {
-            container.innerHTML = `
-                <div class="empty-state">
-                    <i class="fas fa-search"></i>
-                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">No products found</div>
-                    <div>Try selecting a different category</div>
-                </div>
-            `;
-            return;
-        }
-        
-        container.innerHTML = renderProducts(filteredProducts);
-    }
-
-    function renderProducts(products) {
-        return `
+        container.innerHTML = `
             <div class="product-grid">
-                ${products.map(product => `
+                ${appState.products.map(product => `
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300/1a2035/ff6b8b?text=Product+Image'">
+                            <img src="${product.image}" alt="${product.name}" 
+                                 onerror="this.src='https://source.unsplash.com/random/300x300/?fashion,accessory,jewelry'">
                         </div>
                         <div class="product-info">
                             <div class="product-category">${product.category.toUpperCase()}</div>
                             <div class="product-title">${product.name}</div>
-                            <div class="product-price">₦${product.price.toLocaleString()}</div>
+                            <div class="product-price">${product.price.toLocaleString()}</div>
                             <div class="product-stock">
                                 <i class="fas fa-box${product.stock > 10 ? ' in-stock' : product.stock > 0 ? ' low-stock' : ' out-stock'}"></i>
                                 <span class="${product.stock > 10 ? 'in-stock' : product.stock > 0 ? 'low-stock' : 'out-stock'}">
-                                    ${product.stock > 10 ? 'In Stock' : product.stock > 0 ? `Low Stock (${product.stock})` : 'Out of Stock'}
+                                    ${product.stock > 10 ? 'In Stock' : product.stock > 0 ? `Only ${product.stock} left` : 'Sold Out'}
                                 </span>
                             </div>
-                            <button class="btn btn-primary btn-small" onclick="addToCart('${product.id}')" ${product.stock === 0 ? 'disabled' : ''}>
-                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            <button class="btn-add-to-cart" onclick="addToCart('${product.id}')" ${product.stock === 0 ? 'disabled' : ''}>
+                                <i class="fas fa-shopping-bag"></i> Add to Bag
                             </button>
                         </div>
                     </div>
@@ -1177,7 +1019,7 @@
     // ========== CART MANAGEMENT ==========
     function loadCart() {
         try {
-            const savedCart = localStorage.getItem('prettythingskh_cart');
+            const savedCart = localStorage.getItem('prettythingskh_cart_v2');
             if (savedCart) {
                 appState.cart = JSON.parse(savedCart);
             }
@@ -1189,7 +1031,7 @@
 
     function saveCart() {
         try {
-            localStorage.setItem('prettythingskh_cart', JSON.stringify(appState.cart));
+            localStorage.setItem('prettythingskh_cart_v2', JSON.stringify(appState.cart));
         } catch (e) {
             console.error('Error saving cart:', e);
         }
@@ -1198,12 +1040,12 @@
     function addToCart(productId) {
         const product = appState.products.find(p => p.id === productId);
         if (!product) {
-            alert('Product not found!');
+            showToast('Product not found!', 'error');
             return;
         }
         
         if (product.stock <= 0) {
-            alert('Sorry, this product is out of stock!');
+            showToast('Sorry, this product is sold out!', 'error');
             return;
         }
         
@@ -1211,7 +1053,7 @@
         
         if (existingItem) {
             if (existingItem.quantity >= product.stock) {
-                alert(`Only ${product.stock} items available in stock!`);
+                showToast(`Only ${product.stock} items available!`, 'warning');
                 return;
             }
             existingItem.quantity += 1;
@@ -1228,16 +1070,19 @@
         
         saveCart();
         updateCartUI();
+        updateCartSection();
+        updateCheckoutSection();
         
-        // Show success message
-        showToast(`${product.name} added to cart!`);
+        showToast(`${product.name} added to bag!`, 'success');
     }
 
     function removeFromCart(productId) {
         appState.cart = appState.cart.filter(item => item.id !== productId);
         saveCart();
         updateCartUI();
-        showToast('Item removed from cart');
+        updateCartSection();
+        updateCheckoutSection();
+        showToast('Item removed from bag', 'info');
     }
 
     function updateQuantity(productId, newQuantity) {
@@ -1251,148 +1096,211 @@
         
         if (item && product) {
             if (newQuantity > product.stock) {
-                alert(`Only ${product.stock} items available in stock!`);
+                showToast(`Only ${product.stock} items available!`, 'warning');
                 newQuantity = product.stock;
             }
             item.quantity = newQuantity;
             saveCart();
             updateCartUI();
+            updateCartSection();
+            updateCheckoutSection();
         }
     }
 
     function clearCart() {
-        if (confirm('Are you sure you want to clear your cart?')) {
+        if (confirm('Are you sure you want to clear your shopping bag?')) {
             appState.cart = [];
             saveCart();
             updateCartUI();
-            showToast('Cart cleared');
+            updateCartSection();
+            updateCheckoutSection();
+            showToast('Bag cleared', 'info');
         }
     }
 
     function updateCartUI() {
         const totalItems = appState.cart.reduce((sum, item) => sum + item.quantity, 0);
-        const cartCounter = document.getElementById('cartCounter');
-        const cartBadge = document.getElementById('cartBadge');
-        const clearCartBtn = document.getElementById('clearCartBtn');
+        const cartCount = document.getElementById('cartCount');
         
-        if (cartCounter) {
+        if (cartCount) {
             if (totalItems > 0) {
-                cartCounter.textContent = `(${totalItems})`;
-                cartCounter.style.display = 'inline';
+                cartCount.textContent = totalItems > 99 ? '99+' : totalItems;
+                cartCount.style.display = 'block';
             } else {
-                cartCounter.style.display = 'none';
+                cartCount.style.display = 'none';
             }
-        }
-        
-        if (cartBadge) {
-            if (totalItems > 0) {
-                cartBadge.textContent = `${totalItems} item${totalItems !== 1 ? 's' : ''}`;
-                cartBadge.style.display = 'inline-block';
-            } else {
-                cartBadge.style.display = 'none';
-            }
-        }
-        
-        if (clearCartBtn) {
-            clearCartBtn.style.display = totalItems > 0 ? 'block' : 'none';
         }
     }
 
-    function updateCartScreen() {
-        const container = document.getElementById('cartItems');
-        const orderSummary = document.getElementById('orderSummary');
+    function updateCartSection() {
+        const container = document.getElementById('cartSection');
+        
+        if (appState.cart.length === 0) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-shopping-bag"></i>
+                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--accent-dark);">Your bag is empty</div>
+                    <div>Add some beautiful accessories to get started!</div>
+                </div>
+            `;
+            return;
+        }
+        
+        let subtotal = 0;
+        
+        container.innerHTML = `
+            <div style="margin-bottom: 20px;">
+                ${appState.cart.map(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+                    
+                    return `
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="${item.image}" alt="${item.name}" 
+                                     onerror="this.src='https://source.unsplash.com/random/80x80/?fashion,accessory'">
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="cart-item-title">${item.name}</div>
+                                <div class="cart-item-price">₦${item.price.toLocaleString()} × ${item.quantity}</div>
+                                <div class="cart-item-controls">
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn" onclick="updateQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                                        <div class="quantity">${item.quantity}</div>
+                                        <button class="quantity-btn" onclick="updateQuantity('${item.id}', ${item.quantity + 1})" ${item.quantity >= item.stock ? 'disabled' : ''}>+</button>
+                                    </div>
+                                    <button class="btn btn-small" style="background: var(--accent); color: white;" onclick="removeFromCart('${item.id}')">
+                                        <i class="fas fa-trash"></i> Remove
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+            
+            <div class="order-summary">
+                <div class="summary-row">
+                    <div>Subtotal</div>
+                    <div>₦${subtotal.toLocaleString()}</div>
+                </div>
+                <div class="summary-row">
+                    <div>Delivery Fee</div>
+                    <div style="color: var(--text-light); font-size: 14px;">Calculated at checkout</div>
+                </div>
+                <div class="summary-row summary-total">
+                    <div>Total (Estimate)</div>
+                    <div>₦${subtotal.toLocaleString()}</div>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary" onclick="scrollToSection('checkout')" style="margin-top: 20px;">
+                <i class="fas fa-credit-card"></i> Proceed to Checkout
+            </button>
+            
+            <button class="btn" onclick="clearCart()" style="margin-top: 10px; background: transparent; border: 2px solid var(--border);">
+                <i class="fas fa-trash"></i> Clear Bag
+            </button>
+        `;
+    }
+
+    function updateCheckoutSection() {
+        const container = document.getElementById('checkoutSection');
         
         if (appState.cart.length === 0) {
             container.innerHTML = `
                 <div class="empty-state">
                     <i class="fas fa-shopping-cart"></i>
-                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Your cart is empty</div>
-                    <div>Add some beautiful accessories to get started!</div>
+                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--accent-dark);">Add items to your bag first</div>
+                    <div>Browse our collection and add items to proceed</div>
                 </div>
             `;
-            orderSummary.style.display = 'none';
             return;
         }
         
-        let subtotal = 0;
+        const subtotal = appState.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         
-        container.innerHTML = appState.cart.map(item => {
-            const itemTotal = item.price * item.quantity;
-            subtotal += itemTotal;
-            
-            return `
-                <div class="cart-item">
-                    <div class="cart-item-image">
-                        <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/80x80/1a2035/ff6b8b?text=Product'">
+        container.innerHTML = `
+            <form id="checkoutForm" onsubmit="processCheckout(event)">
+                <div class="form-group">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-input" id="fullName" required placeholder="Your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" class="form-input" id="email" required placeholder="you@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-input" id="phone" required placeholder="080XXXXXXXX">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Delivery Location *</label>
+                    <select class="form-select" id="deliveryLocation" required>
+                        <option value="">Select your location</option>
+                        <option value="kaduna">Kaduna (Millenium City)</option>
+                        <option value="zaria">Zaria (Rimin Kambari)</option>
+                        <option value="lagos">Lagos</option>
+                        <option value="abuja">Abuja</option>
+                        <option value="other">Other Nigeria Location</option>
+                        <option value="international">International Shipping</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Full Delivery Address *</label>
+                    <textarea class="form-input" id="deliveryAddress" required rows="3" placeholder="House number, street, city, state"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Payment Method *</label>
+                    <select class="form-select" id="paymentMethod" required>
+                        <option value="">Select payment method</option>
+                        <option value="palm">PalmPay (7040596806 - Ummalkhairi Labaran)</option>
+                        <option value="transfer">Bank Transfer</option>
+                        <option value="paypal">PayPal (International)</option>
+                        <option value="cash">Cash on Delivery (Nigeria Only)</option>
+                    </select>
+                </div>
+                
+                <div class="order-summary" style="margin: 25px 0;">
+                    <div class="summary-row">
+                        <div>Items (${appState.cart.reduce((sum, item) => sum + item.quantity, 0)})</div>
+                        <div>₦${subtotal.toLocaleString()}</div>
                     </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-title">${item.name}</div>
-                        <div class="cart-item-price">₦${item.price.toLocaleString()} × ${item.quantity}</div>
-                        <div class="cart-item-controls">
-                            <div class="quantity-control">
-                                <button class="quantity-btn" onclick="updateQuantity('${item.id}', ${item.quantity - 1})">-</button>
-                                <div class="quantity">${item.quantity}</div>
-                                <button class="quantity-btn" onclick="updateQuantity('${item.id}', ${item.quantity + 1})" ${item.quantity >= item.stock ? 'disabled' : ''}>+</button>
-                            </div>
-                            <button class="btn btn-danger btn-small" onclick="removeFromCart('${item.id}')">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </div>
+                    <div class="summary-row">
+                        <div>Delivery Fee</div>
+                        <div style="color: var(--text-light);">Will be calculated</div>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <div>Total</div>
+                        <div>₦${subtotal.toLocaleString()} + Delivery</div>
                     </div>
                 </div>
-            `;
-        }).join('');
-        
-        // Calculate shipping (free over ₦20,000)
-        const shipping = subtotal >= 20000 ? 0 : 1500;
-        const total = subtotal + shipping;
-        
-        document.getElementById('subtotal').textContent = `₦${subtotal.toLocaleString()}`;
-        document.getElementById('shipping').textContent = shipping === 0 ? 'FREE' : `₦${shipping.toLocaleString()}`;
-        document.getElementById('total').textContent = `₦${total.toLocaleString()}`;
-        
-        orderSummary.style.display = 'block';
-    }
-
-    // ========== CHECKOUT MANAGEMENT ==========
-    function updateCheckoutScreen() {
-        const container = document.getElementById('checkoutItems');
-        const cartSummary = document.getElementById('cartSummary');
-        const checkoutTotal = document.getElementById('checkoutTotal');
-        
-        if (appState.cart.length === 0) {
-            alert('Your cart is empty! Please add items before checkout.');
-            showScreen('shop');
-            return;
-        }
-        
-        let subtotal = 0;
-        const shipping = subtotal >= 20000 ? 0 : 1500;
-        const total = subtotal + shipping;
-        
-        container.innerHTML = appState.cart.map(item => {
-            const itemTotal = item.price * item.quantity;
-            subtotal += itemTotal;
-            
-            return `
-                <div style="display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border);">
-                    <div>
-                        <div style="font-weight: 600;">${item.name}</div>
-                        <div style="color: var(--text-muted); font-size: 14px;">Qty: ${item.quantity}</div>
+                
+                <div style="background: rgba(231, 84, 128, 0.1); padding: 15px; border-radius: 10px; margin: 20px 0;">
+                    <div style="font-weight: 600; color: var(--accent-dark); margin-bottom: 8px;">
+                        <i class="fas fa-info-circle"></i> Important Notes
                     </div>
-                    <div style="font-weight: 600; color: var(--accent);">₦${itemTotal.toLocaleString()}</div>
+                    <div style="font-size: 13px; color: var(--text-light);">
+                        • Delivery fee calculated based on location<br>
+                        • No returns/refunds (hygiene reasons)<br>
+                        • Quality guarantee on all products<br>
+                        • Contact us before payment for delivery fee
+                    </div>
                 </div>
-            `;
-        }).join('');
-        
-        const totalItems = appState.cart.reduce((sum, item) => sum + item.quantity, 0);
-        const finalShipping = subtotal >= 20000 ? 0 : 1500;
-        const finalTotal = subtotal + finalShipping;
-        
-        cartSummary.textContent = `${totalItems} item${totalItems !== 1 ? 's' : ''}`;
-        checkoutTotal.textContent = `₦${finalTotal.toLocaleString()}`;
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Submit Order Request
+                </button>
+            </form>
+        `;
     }
 
+    // ========== CHECKOUT PROCESSING ==========
     function processCheckout(event) {
         event.preventDefault();
         
@@ -1405,109 +1313,110 @@
             paymentMethod: document.getElementById('paymentMethod').value,
             cart: appState.cart,
             subtotal: appState.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
-            total: 0,
             timestamp: new Date().toISOString(),
-            orderId: 'ORDER-' + Date.now().toString(36).toUpperCase()
+            orderId: 'PTKH-' + Date.now().toString(36).toUpperCase().slice(-8)
         };
-        
-        // Calculate total with shipping
-        const shipping = formData.subtotal >= 20000 ? 0 : 1500;
-        formData.total = formData.subtotal + shipping;
-        formData.shipping = shipping;
         
         console.log('Order submitted:', formData);
         
-        // In a real application, you would send this data to your server
-        // For now, we'll show a success message and clear the cart
+        // Show success message
+        const checkoutSection = document.getElementById('checkoutSection');
+        const selectedPayment = document.getElementById('paymentMethod').value;
         
-        // Show payment details based on selected method
         let paymentDetails = '';
-        if (formData.paymentMethod === 'palm') {
+        if (selectedPayment === 'palm') {
             paymentDetails = `
-                <div style="margin: 20px 0; padding: 16px; background: rgba(0, 255, 157, 0.1); border-radius: 12px; border: 1px solid rgba(0, 255, 157, 0.3);">
-                    <div style="font-weight: 600; color: var(--success); margin-bottom: 8px;">
+                <div style="background: rgba(37, 211, 102, 0.1); padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid rgba(37, 211, 102, 0.3);">
+                    <div style="font-weight: 600; color: #25D366; margin-bottom: 8px;">
                         <i class="fas fa-money-check-alt"></i> PalmPay Payment Details
                     </div>
-                    <div style="color: var(--text-muted);">
+                    <div style="font-size: 14px; color: var(--text-light);">
                         <strong>Number:</strong> 7040596806<br>
-                        <strong>Name:</strong> Ummalkhairi Labaran<br>
-                        <strong>Amount:</strong> ₦${formData.total.toLocaleString()}<br>
+                        <strong>Account Name:</strong> Ummalkhairi Labaran<br>
+                        <strong>Amount:</strong> ₦${formData.subtotal.toLocaleString()} + Delivery<br>
                         <strong>Reference:</strong> ${formData.orderId}
                     </div>
                 </div>
             `;
         }
         
-        // Show success modal
-        const successHTML = `
-            <div style="text-align: center; padding: 40px 20px;">
-                <i class="fas fa-check-circle" style="font-size: 64px; color: var(--success); margin-bottom: 20px;"></i>
-                <div style="font-size: 24px; font-weight: 600; margin-bottom: 12px; color: var(--success);">
-                    Order Submitted Successfully!
+        checkoutSection.innerHTML = `
+            <div style="text-align: center; padding: 30px 20px;">
+                <i class="fas fa-check-circle" style="font-size: 50px; color: #27ae60; margin-bottom: 20px;"></i>
+                <div style="font-size: 22px; font-weight: 600; margin-bottom: 10px; color: var(--accent-dark);">
+                    Order Request Submitted!
                 </div>
-                <div style="color: var(--text-muted); margin-bottom: 24px;">
+                <div style="color: var(--text-light); margin-bottom: 25px;">
                     Order ID: <strong>${formData.orderId}</strong><br>
-                    We'll contact you within 24 hours to confirm your order.
+                    We'll contact you within 2 hours to confirm delivery fee and complete your order.
                 </div>
+                
                 ${paymentDetails}
-                <div style="margin: 20px 0; padding: 16px; background: rgba(255, 184, 0, 0.1); border-radius: 12px; border: 1px solid rgba(255, 184, 0, 0.3);">
-                    <div style="font-weight: 600; color: var(--warning); margin-bottom: 8px;">
-                        <i class="fas fa-exclamation-circle"></i> Next Steps
+                
+                <div style="background: rgba(231, 84, 128, 0.1); padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid rgba(231, 84, 128, 0.3);">
+                    <div style="font-weight: 600; color: var(--accent-dark); margin-bottom: 8px;">
+                        <i class="fas fa-whatsapp"></i> Next Steps
                     </div>
-                    <div style="color: var(--text-muted); text-align: left;">
-                        1. Complete your payment using selected method<br>
-                        2. Send payment proof to WhatsApp: 0708488790<br>
-                        3. Include your Order ID: ${formData.orderId}<br>
-                        4. We'll ship within 24 hours of payment confirmation
+                    <div style="font-size: 14px; color: var(--text-light); text-align: left;">
+                        1. Wait for our call/SMS for delivery fee confirmation<br>
+                        2. Complete payment with your selected method<br>
+                        3. Send payment proof to WhatsApp: 0708488790<br>
+                        4. Include Order ID: ${formData.orderId}<br>
+                        5. We'll ship within 24 hours of confirmation
                     </div>
                 </div>
-                <button class="btn btn-primary" onclick="completeOrder()" style="margin-top: 20px;">
-                    <i class="fas fa-check"></i> Done
+                
+                <a href="https://wa.me/234708488790?text=Order%20ID:%20${formData.orderId}%20-%20I%20just%20placed%20an%20order%20on%20prettythingsKH" 
+                   target="_blank" class="whatsapp-btn" style="display: inline-flex; width: auto; margin: 10px;">
+                    <i class="fab fa-whatsapp"></i> Message us on WhatsApp
+                </a>
+                
+                <button class="btn" onclick="resetCheckout()" style="margin-top: 15px; background: transparent; border: 2px solid var(--border);">
+                    <i class="fas fa-shopping-bag"></i> Continue Shopping
                 </button>
             </div>
         `;
         
-        // You could replace this with a proper modal implementation
-        document.getElementById('checkoutForm').innerHTML = successHTML;
-        
-        // In a real app, send order to Google Sheets or your backend
-        // sendOrderToGoogleSheets(formData);
+        // Clear cart after successful order
+        setTimeout(() => {
+            appState.cart = [];
+            saveCart();
+            updateCartUI();
+            updateCartSection();
+        }, 3000);
     }
 
-    function completeOrder() {
-        // Clear cart
-        appState.cart = [];
-        saveCart();
-        updateCartUI();
-        
-        // Reset form and go to home
-        document.getElementById('checkoutForm').reset();
-        showScreen('home');
-        showToast('Order completed! We\'ll contact you soon.');
+    function resetCheckout() {
+        // Reset checkout form and reload sections
+        updateCheckoutSection();
+        updateCartSection();
+        scrollToSection('products');
     }
 
     // ========== UTILITY FUNCTIONS ==========
-    function showToast(message) {
+    function showToast(message, type = 'success') {
+        // Remove existing toast
+        const existingToast = document.querySelector('.toast');
+        if (existingToast) {
+            existingToast.remove();
+        }
+        
         // Create toast element
         const toast = document.createElement('div');
-        toast.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--gradient);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            z-index: 2000;
-            animation: slideIn 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        toast.className = 'toast';
+        
+        const icon = type === 'success' ? 'fas fa-check-circle' : 
+                    type === 'error' ? 'fas fa-exclamation-circle' : 
+                    type === 'warning' ? 'fas fa-exclamation-triangle' : 'fas fa-info-circle';
+        
+        toast.innerHTML = `
+            <i class="${icon}" style="margin-right: 8px;"></i>
+            ${message}
         `;
         
-        toast.textContent = message;
         document.body.appendChild(toast);
         
-        // Remove toast after 3 seconds
+        // Remove toast after 4 seconds
         setTimeout(() => {
             toast.style.animation = 'slideOut 0.3s ease';
             setTimeout(() => {
@@ -1515,27 +1424,10 @@
                     toast.parentNode.removeChild(toast);
                 }
             }, 300);
-        }, 3000);
-        
-        // Add CSS for animations
-        if (!document.getElementById('toast-styles')) {
-            const style = document.createElement('style');
-            style.id = 'toast-styles';
-            style.textContent = `
-                @keyframes slideIn {
-                    from { transform: translateX(100%); opacity: 0; }
-                    to { transform: translateX(0); opacity: 1; }
-                }
-                @keyframes slideOut {
-                    from { transform: translateX(0); opacity: 1; }
-                    to { transform: translateX(100%); opacity: 0; }
-                }
-            `;
-            document.head.appendChild(style);
-        }
+        }, 4000);
     }
 
-    // Initialize the app when DOM is loaded
+    // Initialize the app
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initializeApp);
     } else {
